@@ -5,25 +5,25 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisro00005513.crossoversports.Activities.MainActivity"
     android:orientation="vertical"
-    >
+    tools:context="com.luisro00005513.crossoversports.Activities.MainActivity">
 
     <fragment
-        android:layout_weight="1"
         android:id="@+id/fragmento_padre"
+        android:name="com.luisro00005513.crossoversports.Fragments.FragmentoHome"
+        class="com.luisro00005513.crossoversports.Fragments.FragmentoHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        class="com.luisro00005513.crossoversports.Fragments.FragmentoMenu"
-        android:name="com.luisro00005513.crossoversports.Fragments.FragmentoMenu"
-        tools:layout="@layout/fragmento_menu"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        tools:layout="@layout/fragmento_home"
         />
 
     <android.support.design.widget.BottomNavigationView
-        android:layout_weight="0"
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_weight="0"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />
 

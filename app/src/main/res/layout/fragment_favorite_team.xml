@@ -2,17 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentoMenu">
+    tools:context="com.luisro00005513.crossoversports.Fragments.FavoriteTeamFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragmento menu papi"
+        android:text="Fragmento teams favoritos papi"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
         android:gravity="center"
-        android:background="@color/rojo"
+        android:background="@color/negro"
         />
 
 </FrameLayout>

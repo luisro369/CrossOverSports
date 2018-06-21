@@ -1,5 +1,6 @@
 package com.luisro00005513.crossoversports.Activities;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,45 +8,54 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.luisro00005513.crossoversports.Fragments.FragmentoMenu;
+import com.luisro00005513.crossoversports.Fragments.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentoTeams;
 import com.luisro00005513.crossoversports.Fragments.FragmentoTournaments;
 import com.luisro00005513.crossoversports.R;
 
 public class MainActivity extends AppCompatActivity implements
-        FragmentoMenu.OnFragmentInteractionListener,
+        FragmentoHome.OnFragmentInteractionListener,
         FragmentoTeams.OnFragmentInteractionListener,
         FragmentoTournaments.OnFragmentInteractionListener
         {
 
 
-    //android.support.v4.app.FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            = new  BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //aca se le dice a cada boton que fragmento abrir
+            Fragment fragmentHome = new FragmentoHome();
+            Fragment fragmentTeams = new FragmentoTeams();
+            Fragment fragmentTournaments = new FragmentoTournaments();
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
-                case R.id.navigation_menu:
-                    fr.replace(R.id.fragmento_padre, new FragmentoMenu());
+                case R.id.navigation_home:
+                    fr.replace(R.id.fragmento_padre, fragmentHome);
+                    fr.addToBackStack(null);
                     fr.commit();
-                    return true;
+                    //return true;
+                    break;
                 case R.id.navigation_teams:
-                    fr.replace(R.id.fragmento_padre, new FragmentoTeams());
+                    fr.replace(R.id.fragmento_padre, fragmentTeams);
+                    fr.addToBackStack(null);
                     fr.commit();
-                    return true;
+                    Toast.makeText(MainActivity.this, "entre!!!", Toast.LENGTH_SHORT).show();
+                    //return true;
+                    break;
                 case R.id.navigation_tournaments:
-                    fr.replace(R.id.fragmento_padre, new FragmentoTournaments());
+                    fr.replace(R.id.fragmento_padre, fragmentTournaments);
+                    fr.addToBackStack(null);
                     fr.commit();
-                    return true;
+                    //return true;
+                    break;
             }
-            return false;
+            return true;
         }
     };
 
