@@ -2,8 +2,9 @@
     <string name="app_name">CrossOverSports</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_teams">Teams</string>
-    <string name="title_tournaments">Tournaments</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_manage">Manage</string>
+    <string name="title_create">Create</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

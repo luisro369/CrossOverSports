@@ -36,24 +36,39 @@ public class MainActivity extends AppCompatActivity implements
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    fr.remove(fragmentTeams);
+                    fr.remove(fragmentTournaments);
                     fr.replace(R.id.fragmento_padre, fragmentHome);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
                     break;
-                case R.id.navigation_teams:
+                case R.id.navigation_explore:
+                    fr.remove(fragmentHome);
+                    fr.remove(fragmentTournaments);
                     fr.replace(R.id.fragmento_padre, fragmentTeams);
                     fr.addToBackStack(null);
                     fr.commit();
                     Toast.makeText(MainActivity.this, "entre!!!", Toast.LENGTH_SHORT).show();
                     //return true;
                     break;
-                case R.id.navigation_tournaments:
+                case R.id.navigation_manage:
+                    fr.remove(fragmentHome);
+                    fr.remove(fragmentTeams);
                     fr.replace(R.id.fragmento_padre, fragmentTournaments);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
                     break;
+                case R.id.navigation_create:
+                    fr.remove(fragmentHome);
+                    fr.remove(fragmentTeams);
+                    fr.replace(R.id.fragmento_padre, fragmentTournaments);
+                    fr.addToBackStack(null);
+                    fr.commit();
+                    //return true;
+                    break;
+
             }
             return true;
         }
