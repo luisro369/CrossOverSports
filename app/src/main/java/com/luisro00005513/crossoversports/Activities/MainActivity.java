@@ -11,14 +11,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.luisro00005513.crossoversports.Fragments.FragmentoHome;
-import com.luisro00005513.crossoversports.Fragments.FragmentoTeams;
-import com.luisro00005513.crossoversports.Fragments.FragmentoTournaments;
+import com.luisro00005513.crossoversports.Fragments.FragmentoExplore;
+import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
-        FragmentoTeams.OnFragmentInteractionListener,
-        FragmentoTournaments.OnFragmentInteractionListener
+        FragmentoExplore.OnFragmentInteractionListener,
+        FragmentoManage.OnFragmentInteractionListener
         {
 
 
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //aca se le dice a cada boton que fragmento abrir
             Fragment fragmentHome = new FragmentoHome();
-            Fragment fragmentTeams = new FragmentoTeams();
-            Fragment fragmentTournaments = new FragmentoTournaments();
+            Fragment fragmentTeams = new FragmentoExplore();
+            Fragment fragmentTournaments = new FragmentoManage();
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:

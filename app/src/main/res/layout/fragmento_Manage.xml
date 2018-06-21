@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentoTournaments">
+    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentoManage">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragmento torneo papi"
+        android:text="Fragmento manage papi"
         android:textSize="20sp"
         android:gravity="center"
         android:background="@color/verdde"

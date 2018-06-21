@@ -1,6 +1,5 @@
 package com.luisro00005513.crossoversports.Fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,15 +10,12 @@ import android.view.ViewGroup;
 import com.luisro00005513.crossoversports.R;
 
 
-public class FragmentoTeams extends Fragment {
+public class FragmentoManage extends Fragment {
 
 
-
-
-    public FragmentoTeams() {
+    public FragmentoManage() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -31,9 +27,8 @@ public class FragmentoTeams extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragmento_teams, container, false);
+        return inflater.inflate(R.layout.fragmento_Manage, container, false);
     }
-
 
 
 
