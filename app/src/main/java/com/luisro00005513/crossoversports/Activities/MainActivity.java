@@ -63,9 +63,6 @@ public class MainActivity extends AppCompatActivity implements
                 case R.id.navigation_create:
                     fr.remove(fragmentHome);
                     fr.remove(fragmentTeams);
-                    //ddeberia no borrarse
-                    //probando merge
-                    //mierda nueva
                     fr.replace(R.id.fragmento_padre, fragmentTournaments);
                     fr.addToBackStack(null);
                     fr.commit();
