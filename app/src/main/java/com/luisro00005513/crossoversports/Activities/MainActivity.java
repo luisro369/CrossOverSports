@@ -1,5 +1,6 @@
 package com.luisro00005513.crossoversports.Activities;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.net.Uri;
@@ -10,6 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.luisro00005513.crossoversports.Fragments.FavoritePlayersFragment;
+import com.luisro00005513.crossoversports.Fragments.FavoriteTeamFragment;
+import com.luisro00005513.crossoversports.Fragments.FavoriteTournamentFragment;
+import com.luisro00005513.crossoversports.Fragments.FragmentCreate;
 import com.luisro00005513.crossoversports.Fragments.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
@@ -18,7 +23,11 @@ import com.luisro00005513.crossoversports.R;
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
         FragmentoExplore.OnFragmentInteractionListener,
-        FragmentoManage.OnFragmentInteractionListener
+        FragmentoManage.OnFragmentInteractionListener,
+        FragmentCreate.OnFragmentInteractionListener,
+        FavoriteTournamentFragment.OnFragmentInteractionListener,
+        FavoritePlayersFragment.OnFragmentInteractionListener,
+        FavoriteTeamFragment.OnFragmentInteractionListener
         {
 
 
@@ -36,16 +45,12 @@ public class MainActivity extends AppCompatActivity implements
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    fr.remove(fragmentTeams);
-                    fr.remove(fragmentTournaments);
                     fr.replace(R.id.fragmento_padre, fragmentHome);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
                     break;
                 case R.id.navigation_explore:
-                    fr.remove(fragmentHome);
-                    fr.remove(fragmentTournaments);
                     fr.replace(R.id.fragmento_padre, fragmentTeams);
                     fr.addToBackStack(null);
                     fr.commit();
@@ -53,16 +58,12 @@ public class MainActivity extends AppCompatActivity implements
                     //return true;
                     break;
                 case R.id.navigation_manage:
-                    fr.remove(fragmentHome);
-                    fr.remove(fragmentTeams);
                     fr.replace(R.id.fragmento_padre, fragmentTournaments);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
                     break;
                 case R.id.navigation_create:
-                    fr.remove(fragmentHome);
-                    fr.remove(fragmentTeams);
                     fr.replace(R.id.fragmento_padre, fragmentTournaments);
                     fr.addToBackStack(null);
                     fr.commit();

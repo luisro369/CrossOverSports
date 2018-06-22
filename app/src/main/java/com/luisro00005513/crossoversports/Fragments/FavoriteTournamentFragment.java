@@ -1,6 +1,7 @@
 package com.luisro00005513.crossoversports.Fragments;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,6 +30,11 @@ public class FavoriteTournamentFragment extends Fragment {
 
         return viewGroup;
 
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 
 }
