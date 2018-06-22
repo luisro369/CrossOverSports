@@ -1,4 +1,4 @@
-package com.luisro00005513.crossoversports.Fragments;
+package com.luisro00005513.crossoversports.Fragments.FragmentHome;
 
 
 import android.net.Uri;
@@ -13,10 +13,10 @@ import com.luisro00005513.crossoversports.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FavoriteTeamFragment extends Fragment {
+public class FavoritePlayersFragment extends Fragment {
 
 
-    public FavoriteTeamFragment() {
+    public FavoritePlayersFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class FavoriteTeamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_team, container, false);
+        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_players, container, false);
 
 
         return viewGroup;

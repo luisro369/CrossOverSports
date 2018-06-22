@@ -1,6 +1,5 @@
 package com.luisro00005513.crossoversports.Activities;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.net.Uri;
@@ -11,11 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.luisro00005513.crossoversports.Fragments.FavoritePlayersFragment;
-import com.luisro00005513.crossoversports.Fragments.FavoriteTeamFragment;
-import com.luisro00005513.crossoversports.Fragments.FavoriteTournamentFragment;
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate;
-import com.luisro00005513.crossoversports.Fragments.FragmentoHome;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFragment;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournamentFragment;
+import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreate;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements
         FavoriteTeamFragment.OnFragmentInteractionListener
         {
 
-//pruebaaaaa
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

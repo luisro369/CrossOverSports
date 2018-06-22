@@ -1,4 +1,4 @@
-package com.luisro00005513.crossoversports.Fragments;
+package com.luisro00005513.crossoversports.Fragments.FragmentHome;
 
 import android.net.Uri;
 import android.os.Bundle;
