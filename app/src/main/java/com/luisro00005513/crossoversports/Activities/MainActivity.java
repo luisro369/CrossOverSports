@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournamentFragment;
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreate;
+import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCreate;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
         FragmentoExplore.OnFragmentInteractionListener,
         FragmentoManage.OnFragmentInteractionListener,
-        FragmentCreate.OnFragmentInteractionListener,
+        FragmentoCreate.OnFragmentInteractionListener,
         FavoriteTournamentFragment.OnFragmentInteractionListener,
         FavoritePlayersFragment.OnFragmentInteractionListener,
         FavoriteTeamFragment.OnFragmentInteractionListener
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements
             Fragment fragmentHome = new FragmentoHome();
             Fragment fragmentExplore = new FragmentoExplore();
             Fragment fragmentManage = new FragmentoManage();
-            Fragment fragmentCreate = new FragmentCreate();
+            Fragment fragmentCreate = new FragmentoCreate();
 
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements
                     fr.replace(R.id.fragmento_padre, fragmentExplore);
                     fr.addToBackStack(null);
                     fr.commit();
-                    Toast.makeText(MainActivity.this, "entre!!!", Toast.LENGTH_SHORT).show();
                     //return true;
                     break;
                 case R.id.navigation_manage:

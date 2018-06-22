@@ -18,7 +18,7 @@ import com.luisro00005513.crossoversports.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentCreate extends Fragment {
+public class FragmentoCreate extends Fragment {
 
     /**
      * El numero de paginas para enseniar.
@@ -50,6 +50,7 @@ public class FragmentCreate extends Fragment {
         mPagerAdapter = new ScreenSlidePagerAdapter2(getChildFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
+        mPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
