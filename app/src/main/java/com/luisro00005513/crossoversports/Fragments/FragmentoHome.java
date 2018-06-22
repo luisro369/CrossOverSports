@@ -41,9 +41,9 @@ public class FragmentoHome extends Fragment {
         //======================todos sobre el tab====================
         //========================================
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Teams"));
-        tabLayout.addTab(tabLayout.newTab().setText("Players"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tournaments"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.teams));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.players));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tournament));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //codigo para viewpager
