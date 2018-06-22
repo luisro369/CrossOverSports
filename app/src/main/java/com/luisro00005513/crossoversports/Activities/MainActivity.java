@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournamentFragment;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
