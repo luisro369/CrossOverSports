@@ -10,13 +10,13 @@
 
     <fragment
         android:id="@+id/fragmento_padre"
-        android:name="com.luisro00005513.crossoversports.Fragments.FragmentoHome"
-        class="com.luisro00005513.crossoversports.Fragments.FragmentoHome"
+        android:name="com.luisro00005513.crossoversports.Fragments.FragmentoExplore"
+        class="com.luisro00005513.crossoversports.Fragments.FragmentoExplore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:baselineAligned="false"
-        tools:layout="@layout/fragmento_home"
+        tools:layout="@layout/fragmento_explore"
         />
 
     <android.support.design.widget.BottomNavigationView

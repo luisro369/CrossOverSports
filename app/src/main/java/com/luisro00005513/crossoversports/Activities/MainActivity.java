@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity implements
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //aca se le dice a cada boton que fragmento abrir
             Fragment fragmentHome = new FragmentoHome();
-            Fragment fragmentTeams = new FragmentoExplore();
-            Fragment fragmentTournaments = new FragmentoManage();
+            Fragment fragmentExplore = new FragmentoExplore();
+            Fragment fragmentManage = new FragmentoManage();
+            Fragment fragmentCreate = new FragmentCreate();
+
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
@@ -51,20 +53,20 @@ public class MainActivity extends AppCompatActivity implements
                     //return true;
                     break;
                 case R.id.navigation_explore:
-                    fr.replace(R.id.fragmento_padre, fragmentTeams);
+                    fr.replace(R.id.fragmento_padre, fragmentExplore);
                     fr.addToBackStack(null);
                     fr.commit();
                     Toast.makeText(MainActivity.this, "entre!!!", Toast.LENGTH_SHORT).show();
                     //return true;
                     break;
                 case R.id.navigation_manage:
-                    fr.replace(R.id.fragmento_padre, fragmentTournaments);
+                    fr.replace(R.id.fragmento_padre, fragmentManage);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
                     break;
                 case R.id.navigation_create:
-                    fr.replace(R.id.fragmento_padre, fragmentTournaments);
+                    fr.replace(R.id.fragmento_padre, fragmentCreate);
                     fr.addToBackStack(null);
                     fr.commit();
                     //return true;
