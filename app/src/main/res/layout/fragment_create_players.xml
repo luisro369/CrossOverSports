@@ -2,17 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore">
+    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreatePlayers">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragmento explore papi"
+        android:text="Fragment create players"
         android:textSize="20sp"
         android:textColor="@android:color/white"
         android:gravity="center"
-        android:background="@color/negro"
+        android:background="@color/verdde"
         />
 
 </FrameLayout>

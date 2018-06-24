@@ -11,6 +11,7 @@
     <string name="tournament">Tournament</string>
     <string name="create_team">Create Team</string>
     <string name="create_tournament">Create Tournament</string>
+    <string name="create_player">Create Player</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

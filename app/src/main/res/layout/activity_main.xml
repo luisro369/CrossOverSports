@@ -10,8 +10,8 @@
 
     <fragment
         android:id="@+id/fragmento_padre"
-        android:name="com.luisro00005513.crossoversports.Fragments.FragmentoExplore"
-        class="com.luisro00005513.crossoversports.Fragments.FragmentoExplore"
+        android:name="com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore"
+        class="com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

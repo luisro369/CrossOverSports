@@ -23,7 +23,7 @@ public class FragmentoCreate extends Fragment {
     /**
      * El numero de paginas para enseniar.
      */
-    private static final int NUM_PAGES = 2;
+    private static final int NUM_PAGES = 3;
     //viewPager widget
     private ViewPager mPager;
     //pager adapter, provee las paginas al view pager widget
@@ -43,6 +43,7 @@ public class FragmentoCreate extends Fragment {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutCreate);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.create_team));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.create_tournament));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.create_player));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //codigo para viewpager
@@ -83,6 +84,9 @@ public class FragmentoCreate extends Fragment {
                 case 1:
                     FragmentCreateTournaments tab2 = new FragmentCreateTournaments();
                     return tab2;
+                case 2:
+                    FragmentCreatePlayers tab3 = new FragmentCreatePlayers();
+                    return tab3;
                 default:
                     return null;
             }//switch

@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
@@ -16,7 +15,7 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFra
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournamentFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCreate;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
-import com.luisro00005513.crossoversports.Fragments.FragmentoExplore;
+import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
 
