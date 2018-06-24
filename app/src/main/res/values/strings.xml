@@ -6,12 +6,18 @@
     <string name="title_manage">Manage</string>
     <string name="title_create">Create</string>
 
+    <!-- strings para boton home -->
     <string name="teams">Teams</string>
     <string name="players">Players</string>
     <string name="tournament">Tournament</string>
+    <!-- strings para boton create -->
     <string name="create_team">Create Team</string>
     <string name="create_tournament">Create Tournament</string>
     <string name="create_player">Create Player</string>
+    <!-- strings para boton manage -->
+    <string name="manage_tournament">Manage Tournament</string>
+    <string name="manage_team">Manage Team</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

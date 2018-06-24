@@ -16,7 +16,7 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournam
 import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCreate;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
-import com.luisro00005513.crossoversports.Fragments.FragmentoManage;
+import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
 
 public class MainActivity extends AppCompatActivity implements
