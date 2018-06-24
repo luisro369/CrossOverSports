@@ -15,8 +15,12 @@
     <string name="create_tournament">Create Tournament</string>
     <string name="create_player">Create Player</string>
     <!-- strings para boton manage -->
-    <string name="manage_tournament">Manage Tournament</string>
-    <string name="manage_team">Manage Team</string>
+    <string name="manage_tournament">Manage Tournaments</string>
+    <string name="manage_team">Manage Teams</string>
+    <!-- strings para boton explore -->
+    <string name="explore_tournament">Explore Tournaments</string>
+    <string name="explore_team">Explore Teams</string>
+    <string name="explore_player">Explore Players</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

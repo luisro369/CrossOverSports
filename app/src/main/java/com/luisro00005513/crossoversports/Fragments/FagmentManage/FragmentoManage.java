@@ -12,10 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreatePlayers;
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreateTeams;
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreateTournaments;
-import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCreate;
 import com.luisro00005513.crossoversports.R;
 
 
