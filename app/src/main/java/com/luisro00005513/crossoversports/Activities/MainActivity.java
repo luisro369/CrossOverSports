@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity implements
         FavoriteTeamFragment.OnFragmentInteractionListener
         {
 
-
+    public Fragment fragmentHome = new FragmentoHome();
+    public Fragment fragmentExplore = new FragmentoExplore();
+    public Fragment fragmentManage = new FragmentoManage();
+    public Fragment fragmentCreate = new FragmentoCreate();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new  BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,10 +40,6 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //aca se le dice a cada boton que fragmento abrir
-            Fragment fragmentHome = new FragmentoHome();
-            Fragment fragmentExplore = new FragmentoExplore();
-            Fragment fragmentManage = new FragmentoManage();
-            Fragment fragmentCreate = new FragmentoCreate();
 
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
@@ -48,25 +47,25 @@ public class MainActivity extends AppCompatActivity implements
                     fr.replace(R.id.fragmento_padre, fragmentHome);
                     fr.addToBackStack(null);
                     fr.commit();
-                    //return true;
+                    //return true;*/
                     break;
                 case R.id.navigation_explore:
                     fr.replace(R.id.fragmento_padre, fragmentExplore);
                     fr.addToBackStack(null);
                     fr.commit();
-                    //return true;
+                    //return true;*/
                     break;
                 case R.id.navigation_manage:
                     fr.replace(R.id.fragmento_padre, fragmentManage);
                     fr.addToBackStack(null);
                     fr.commit();
-                    //return true;
+                    //return true;*/
                     break;
                 case R.id.navigation_create:
                     fr.replace(R.id.fragmento_padre, fragmentCreate);
                     fr.addToBackStack(null);
                     fr.commit();
-                    //return true;
+                    //return true;*/
                     break;
 
             }
@@ -83,6 +82,12 @@ public class MainActivity extends AppCompatActivity implements
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        if(savedInstanceState == null){
+            FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
+            fr.replace(R.id.fragmento_padre, fragmentHome);
+            fr.addToBackStack(null);
+            fr.commit();
+        }//le digo que fragment hacer default
 
 
 

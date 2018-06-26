@@ -8,20 +8,27 @@
     android:orientation="vertical"
     tools:context="com.luisro00005513.crossoversports.Activities.MainActivity">
 
+    <android.support.v7.widget.ContentFrameLayout
+        android:id="@+id/fragmento_padre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+    </android.support.v7.widget.ContentFrameLayout>
+    <!--
     <fragment
         android:id="@+id/fragmento_padre"
-        android:name="com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore"
-        class="com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:baselineAligned="false"
-        tools:layout="@layout/fragmento_explore"
+        class="com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome"
+        android:name="com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome"
+        tools:layout="@layout/fragmento_home"
         />
-
+-->
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
-        
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
