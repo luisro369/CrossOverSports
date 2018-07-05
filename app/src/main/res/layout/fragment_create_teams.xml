@@ -1,17 +1,111 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreateTeams">
+    tools:context="com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentCreateTeams"
+    android:background="@color/primaryLightColor"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/create_team_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment create teams"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
+        android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        />
+        android:background="#fff"
+        android:paddingBottom="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/primaryDarkColor">
+            <ImageView
+                android:id="@+id/create_teamavatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_team_default"
+                android:background="@color/secondaryLightColor"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/create_teamname_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_teamname"
+            android:gravity="center"
+            android:paddingTop="8dp"/>
+        <EditText
+            android:id="@+id/crete_teamname_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/create_player_country"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/create_player_city"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"></Spinner>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cretate_teamfoundation"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/crete_extrainfo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_extra"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/crete_player_extrainfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/create_playername_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_team_button"
+            android:background="@color/secondaryDarkColor"
+            android:padding="16dp"
+            android:textColor="@color/primaryTextColor"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    </LinearLayout>
+
+</ScrollView>
