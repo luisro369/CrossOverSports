@@ -68,8 +68,8 @@ public static final String TABLE_PXT ="playerxteam";
     public static final String COLLUMN_PXT_ID ="playerxteam_id";
     public static final String COLLUMN_PXT_PLAYER_NUMBER ="player_number";
     public static final String COLLUMN_PXT_POSITION ="player_position";
-    public static final String COLLUMN_PXT_PLAYER ="id_player";
-    public static final String COLLUMN_PXT_TEAM ="id_team";
+    public static final String COLLUMN_PXT_PLAYER ="player_id";
+    public static final String COLLUMN_PXT_TEAM ="team_id";
     public static final String COLLUMN_PXT_GOALS ="goals_scored";
     public static final String COLLUMN_PXT_ASSISTS ="assist_scored";
     public static final String COLLUMN_PXT_CLEAN ="clean_sheets";
@@ -110,8 +110,8 @@ public static final String TABLE_TOURNAMENT ="tournament";
 //CREACION TABLA DE TEAMXTOURNAMENT
 public static final String TABLE_TXT ="teamxtournament";
     public static final String COLLUMN_TXT_ID="txt_id";
-    public static final String COLLUMN_TXT_TEAM ="id_team";
-    public static final String COLLUMN_TXT_TOURNAMENT ="id_tournament";
+    public static final String COLLUMN_TXT_TEAM ="team_id";
+    public static final String COLLUMN_TXT_TOURNAMENT ="tournament_id";
     public static final String COLLUMN_TXT_POINTS ="points";
 
 
@@ -129,7 +129,7 @@ public static final String TABLE_MATCH ="match";
     public static final String COLLUMN_MATCH_TOURNAMENT ="tournament_id";
     public static final String COLLUMN_MATCH_GOALS1 ="team1_goals";
     public static final String COLLUMN_MATCH_GOALS2 ="team2_goals";
-    public static final String COLLUMN_MATCH_RCARD1 ="rcard_t1`";
+    public static final String COLLUMN_MATCH_RCARD1 ="rcard_t1";
     public static final String COLLUMN_MATCH_RCARD2="rcard_t2";
     public static final String COLLUMN_MATCH_YCARD1 ="ycard_t1";
     public static final String COLLUMN_MATCH_YCARD2 ="ycard_t2";

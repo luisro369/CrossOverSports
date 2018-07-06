@@ -5,18 +5,35 @@
     <string name="title_explore">Explore</string>
     <string name="title_manage">Manage</string>
     <string name="title_create">Create</string>
-
-    <!-- strings para boton home -->
+    <!-- ****************************HOME*************************************************** -->
+    <!-- strings para  home -->
     <string name="teams">Teams</string>
     <string name="players">Players</string>
     <string name="tournament">Tournament</string>
+    <!-- ****************************CREATE************************************* -->
+    <string name="create_player_country">Country</string>
+    <string name="create_player_city">City</string>
     <!-- strings para boton create -->
     <string name="create_team">Create Team</string>
     <string name="create_tournament">Create Tournament</string>
     <string name="create_player">Create Player</string>
+    <!-- strings crete/player -->
+    <string name="create_addplayer">Add new player</string>
+    <string name="create_playername">Player Name</string>
+    <string name="create_payerbirth">Date of birth/Country</string>
+    <string name="create_extra">Extra info for the bio</string>
+    <string name="create_shownname">Known as</string>
+    <string name="create_player_searchkey_text">Specify a key so users can find this player easier
+        (Needs to be unique)</string>
+    <!-- strings crete/team -->
+    <string name="create_team_button">Add new team</string>
+    <string name="create_teamname">Team name</string>
+    <string name="cretate_teamfoundation">Foundation</string>
+    <!-- ****************************MANAGE************************************************ -->
     <!-- strings para boton manage -->
     <string name="manage_tournament">Manage Tournaments</string>
     <string name="manage_team">Manage Teams</string>
+    <!-- ****************************EXPLORE*********************************************** -->
     <!-- strings para boton explore -->
     <string name="explore_tournament">Explore Tournaments</string>
     <string name="explore_team">Explore Teams</string>
