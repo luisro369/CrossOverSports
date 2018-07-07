@@ -2,7 +2,9 @@ package com.luisro00005513.crossoversports.retrofit;
 
 import com.luisro00005513.crossoversports.Entities.Match;
 import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Entities.TeamXTournament;
 import com.luisro00005513.crossoversports.Entities.Tournament;
 
 import java.util.List;
@@ -52,6 +54,28 @@ public interface RetrofitService {
     public Call<List<Team>> getTeams(@Query("team_id") String teamId, @Query("team_name") String teamName,
                                      @Query("team_country") String teamCountry, @Query("team_avatar") String teamAvatar,
                                      @Query("team_division") String teamDivision);
+
+
+    //metodo para poder extraer playersxteams de la api
+    @GET("/api/playerxteam")
+    public Call<List<PlayerXTeam>> getPlayerxteams(@Query("playerxteam_id") String playerxTId,
+                                                   @Query("player_number") String playerNumber,
+                                                   @Query("player_position") String playerPosition,
+                                                   @Query("player_id") String playerId,
+                                                   @Query("team_id") String teamId,
+                                                   @Query("goals_scored") String goalsScored,
+                                                   @Query("assist_scored") String assistScored,
+                                                   @Query("clean_sheets") String cleanSheets,
+                                                   @Query("yellow_cards") String yellowCards,
+                                                   @Query("red_cards") String redCards);
+
+    //metodo para poder extraer teamxtournament de la api
+    @GET("/api/teamxtournament")
+    public Call<List<TeamXTournament>> getTeamxtournaments(@Query("txt_id") String txtId,
+                                                           @Query("team_id") String teamId,
+                                                           @Query("tournament_id") String tournamentId,
+                                                           @Query("points") String points);
+
 
 
 }

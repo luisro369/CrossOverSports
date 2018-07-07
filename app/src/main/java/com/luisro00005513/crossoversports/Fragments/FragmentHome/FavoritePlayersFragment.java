@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.luisro00005513.crossoversports.Entities.Match;
 import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Entities.TeamXTournament;
 import com.luisro00005513.crossoversports.Entities.Tournament;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
@@ -89,21 +91,34 @@ public class FavoritePlayersFragment extends Fragment {
         else{
             Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
         }
-        */
-        //==========llamada de equipos=================
-        RetrofitServices teams = new RetrofitServices();
-        ArrayList<Team> listTeams = teams.getTeams();
-        if(listTeams.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"equipo 1: "+listTeams.get(0).getTeamName(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"equipo 2: "+listTeams.get(1).getTeamName(),Toast.LENGTH_LONG).show();
-            borrame.setText(listTeams.get(0).getTeamName());
+
+        //==========llamada de playerxteam=================
+        RetrofitServices pxt = new RetrofitServices();
+        ArrayList<PlayerXTeam> listPxt = pxt.getPlayersXTeams();
+        if(listPxt.size() > 1 ) {
+            Toast.makeText(getParentFragment().getContext(),"player1 goals: "+listPxt.get(0).getGoalsScored(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getParentFragment().getContext(),"player2 goals: "+listPxt.get(1).getGoalsScored(),Toast.LENGTH_LONG).show();
+            borrame.setText(listPxt.get(0).getGoalsScored());
 
         }
         else{
             Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
         }
 
+        */
 
+        //==========llamada de teamxtournament=================
+        RetrofitServices txt = new RetrofitServices();
+        ArrayList<TeamXTournament> listTxt = txt.getTeamxtournaments();
+        if(listTxt.size() > 1 ) {
+            Toast.makeText(getParentFragment().getContext(),"team1 points: "+listTxt.get(0).getPoints(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getParentFragment().getContext(),"team2 points: "+listTxt.get(1).getPoints(),Toast.LENGTH_LONG).show();
+            borrame.setText(listTxt.get(0).getPoints());
+
+        }
+        else{
+            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
+        }
 
 
 

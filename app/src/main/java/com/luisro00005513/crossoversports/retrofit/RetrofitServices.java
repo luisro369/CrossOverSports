@@ -6,7 +6,9 @@ import android.widget.Toast;
 
 import com.luisro00005513.crossoversports.Entities.Match;
 import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Entities.TeamXTournament;
 import com.luisro00005513.crossoversports.Entities.Tournament;
 
 import java.io.IOException;
@@ -31,6 +33,9 @@ public class RetrofitServices {
     public static ArrayList<Player> listPlayers = new ArrayList<>();
     public static ArrayList<Tournament> listTournaments = new ArrayList<>();
     public static ArrayList<Team> listTeams = new ArrayList<>();
+    public static ArrayList<PlayerXTeam> listPlayerxteams = new ArrayList<>();
+    public static ArrayList<TeamXTournament> listTeamxtournaments = new ArrayList<>();
+
 
     //public static final String BASE_URL = "http://localhost:3000";
     //public static final String BASE_URL = "http://192.168.0.28:3000";//wifi
@@ -98,6 +103,8 @@ public class RetrofitServices {
         //Log.d("lista 2: ", ListMatches2.get(1).getMatchId());
         return listMatches;
     }//metodo para que devuelva las matches
+
+
 
     //=================metodo para extraer todos los players=============================
     public ArrayList<Player> getPlayers(){
@@ -187,7 +194,7 @@ public class RetrofitServices {
 
 
 
-    //=================metodo para extraer todos los torneos=============================
+    //=================metodo para extraer todos los equipos=============================
     public ArrayList<Team> getTeams(){
         Call<List<Team>> call = conectar().getTeams("team_id","team_name",
                 "team_country","team_avatar","team_division");
@@ -217,7 +224,7 @@ public class RetrofitServices {
                 Log.d("failure","conexion eronea :(((((((");
             }//onfailure
         });
-        if(listTournaments.size() > 1 ) {
+        if(listTeams.size() > 1 ) {
             Log.d("nombre equipo:", listTeams.get(0).getTeamName());
         }
         else{
@@ -228,6 +235,103 @@ public class RetrofitServices {
         return listTeams;
     }//metodo para que devuelva los equipos
 
+
+
+    //=================metodo para extraer todos los playersXteams=============================
+    public ArrayList<PlayerXTeam> getPlayersXTeams(){
+        Call<List<PlayerXTeam>> call = conectar().getPlayerxteams("playerxteam_id",
+                "player_number","player_position","player_id",
+                "team_id","goals_scored", "assist_scored","clean_sheets",
+                "yellow_cards","red_cards");
+        call.enqueue(new Callback<List<PlayerXTeam>>() {
+            @Override
+            public void onResponse(Call<List<PlayerXTeam>> call, Response<List<PlayerXTeam>> response) {
+                if(response.isSuccessful()) {
+                    Log.d("conexion","conexion exitosa!!!!!");
+                    for (int i = 0; i < response.body().size(); i++) {
+                        String playexTId = response.body().get(i).getPlayerxteamId();
+                        String playerNumber = response.body().get(i).getPlayerNumber();
+                        String playerPosition = response.body().get(i).getPlayerPosition();
+                        String playerId = response.body().get(i).getPlayerId();
+                        String teamId = response.body().get(i).getTeamId();
+                        String goalsScored = response.body().get(i).getGoalsScored();
+                        String assistScored = response.body().get(i).getAssistScored();
+                        String cleanSheets = response.body().get(i).getCleanSheets();
+                        String yellowCards = response.body().get(i).getYellowCards();
+                        String redCards = response.body().get(i).getRedCards();
+
+
+
+                        listPlayerxteams.add(new PlayerXTeam(playexTId,playerNumber,playerPosition,
+                                playerId,teamId,goalsScored,assistScored,cleanSheets,yellowCards,
+                                redCards));//arreglo para playerxteam
+
+                    }//for
+                }//if response successfull
+                else{
+                    Log.d("fracaso","conexion eronea :(((((((");
+                }//si la conexion no es exitosa
+            }//on response
+
+            @Override
+            public void onFailure(Call<List<PlayerXTeam>> call, Throwable t) {
+                Log.d("failure","conexion eronea :(((((((");
+            }//onfailure
+        });
+        if(listPlayerxteams.size() > 1 ) {
+            Log.d("nombre equipo:", listPlayerxteams.get(0).getPlayerPosition());
+        }
+        else{
+            Log.d("================res: ","arreglo nulo");
+        }
+        //Log.d("lista 1: ", ListMatches2.get(0).getMatchId());
+        //Log.d("lista 2: ", ListMatches2.get(1).getMatchId());
+        return listPlayerxteams;
+    }//metodo para que devuelva los playersxteams
+
+
+
+
+    //=================metodo para extraer todos los teamxtournaments=============================
+    public ArrayList<TeamXTournament> getTeamxtournaments(){
+        Call<List<TeamXTournament>> call = conectar().getTeamxtournaments("txt_id","team_id",
+                "tournament_id","points");
+        call.enqueue(new Callback<List<TeamXTournament>>() {
+            @Override
+            public void onResponse(Call<List<TeamXTournament>> call, Response<List<TeamXTournament>> response) {
+                if(response.isSuccessful()) {
+                    Log.d("conexion","conexion exitosa!!!!!");
+                    for (int i = 0; i < response.body().size(); i++) {
+                        String txtId = response.body().get(i).getTxtId();
+                        String teamId = response.body().get(i).getTournamentId();
+                        String tournamentId = response.body().get(i).getTournamentId();
+                        String points = response.body().get(i).getPoints();
+
+
+                        listTeamxtournaments.add(new TeamXTournament(txtId,teamId,tournamentId,points));//arreglo para playerxteam
+
+                    }//for
+                }//if response successfull
+                else{
+                    Log.d("fracaso","conexion eronea :(((((((");
+                }//si la conexion no es exitosa
+            }//on response
+
+            @Override
+            public void onFailure(Call<List<TeamXTournament>> call, Throwable t) {
+                Log.d("failure","conexion eronea :(((((((");
+            }//onfailure
+        });
+        if(listTeamxtournaments.size() > 1 ) {
+            Log.d("nombre equipo:", listTeamxtournaments.get(0).getPoints());
+        }
+        else{
+            Log.d("================res: ","arreglo nulo");
+        }
+        //Log.d("lista 1: ", ListMatches2.get(0).getMatchId());
+        //Log.d("lista 2: ", ListMatches2.get(1).getMatchId());
+        return listTeamxtournaments;
+    }//metodo para que devuelva los teamxtournament
 
 
 }// clase retrofit services
