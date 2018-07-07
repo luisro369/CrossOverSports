@@ -1,5 +1,6 @@
 package com.luisro00005513.crossoversports.Activities;
 
+import android.arch.persistence.room.Room;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.net.Uri;
@@ -7,9 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
+import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Entities.XoverDatabase;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournamentFragment;
@@ -18,6 +22,8 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
@@ -33,13 +39,15 @@ public class MainActivity extends AppCompatActivity implements
     public Fragment fragmentExplore = new FragmentoExplore();
     public Fragment fragmentManage = new FragmentoManage();
     public Fragment fragmentCreate = new FragmentoCreate();
-
+    public static  XoverDatabase db;
+    public static List<Player> players;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new  BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             //aca se le dice a cada boton que fragmento abrir
+
 
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
@@ -78,7 +86,19 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final XoverDatabase db = Room.databaseBuilder(getApplicationContext(), XoverDatabase.class, "xover")
+                .allowMainThreadQueries()
+                .build();
+        players= db.playerDAO().getAll();
 
+/*
+       db.playerDAO().insertAll(new Player(2,R.drawable.navas,"cristiano","cr7"
+        ,"10/10/10","info extra cr7","Portugal"));
+/*
+        List<Player> players= db.playerDAO().getAll();
+        Log.d("holaroom",players.get(0).getPlayerName());
+        Log.d("holaroom",players.get(1).getPlayerName());
+        */
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

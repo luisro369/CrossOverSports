@@ -1,20 +1,24 @@
 package com.luisro00005513.crossoversports.Fragments.FragmentHome;
 
 
+import android.arch.persistence.room.Room;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Adapters.JugadoresAdapter;
 import com.luisro00005513.crossoversports.Entities.*;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,18 +37,20 @@ public class FavoritePlayersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View viewPlayer=inflater.inflate(R.layout.fragment_favorite_players,container,false);
-
+        List<Player> playersList = MainActivity.players;
         playerList = new ArrayList<>();
         teamList= new ArrayList<>();;
          pxtList= new ArrayList<>();;
         recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_players);
         recyclerPlayer.setLayoutManager(new LinearLayoutManager(getContext()));
-        
-        FillPlayerList();
 
-        JugadoresAdapter adapter = new JugadoresAdapter(playerList,teamList,pxtList);
+       // FillPlayerList();
+       // Log.d("fragmentplayer");
+//        Log.d("porfavor",MainActivity.players.get(0).getPlayerName());
+        JugadoresAdapter adapter = new JugadoresAdapter(playersList,teamList,pxtList);
         recyclerPlayer.setAdapter(adapter);
 
         return viewPlayer;

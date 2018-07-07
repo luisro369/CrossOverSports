@@ -14,10 +14,10 @@ public class PlayerXTeam {
     private String playerPosition;
 
     @ColumnInfo(name="player_id")
-    private String playerId ;
+    private Integer playerId ;
 
     @ColumnInfo(name="team_id")
-    private String teamId;
+    private Integer teamId;
 
     @ColumnInfo(name="goals_scored")
     private String goalsScored;
@@ -34,6 +34,17 @@ public class PlayerXTeam {
     @ColumnInfo(name="red_cards")
     private String redCards;
 
+    public PlayerXTeam(Integer playerxteamId, String playerPosition, Integer playerId, Integer teamId, String goalsScored, String assistScored, String cleanSheets, String yellowCards, String redCards) {
+        this.playerxteamId = playerxteamId;
+        this.playerPosition = playerPosition;
+        this.playerId = playerId;
+        this.teamId = teamId;
+        this.goalsScored = goalsScored;
+        this.assistScored = assistScored;
+        this.cleanSheets = cleanSheets;
+        this.yellowCards = yellowCards;
+        this.redCards = redCards;
+    }
 
     public Integer getPlayerxteamId() {
         return playerxteamId;
@@ -51,19 +62,19 @@ public class PlayerXTeam {
         this.playerPosition = playerPosition;
     }
 
-    public String getPlayerId() {
+    public Integer getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(String playerId) {
+    public void setPlayerId(Integer playerId) {
         this.playerId = playerId;
     }
 
-    public String getTeamId() {
+    public Integer getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(String teamId) {
+    public void setTeamId(Integer teamId) {
         this.teamId = teamId;
     }
 

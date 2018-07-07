@@ -15,6 +15,7 @@ import com.luisro00005513.crossoversports.Entities.Team;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.ViewHolderJugadores> {
 
@@ -24,8 +25,8 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
     Integer team;
 
 
-    public JugadoresAdapter(ArrayList<Player> listaJugadores,ArrayList<Team> listaEquipos,ArrayList<PlayerXTeam> pxteamlist) {
-        ListaJugadores = listaJugadores;
+    public JugadoresAdapter(List<Player> listaJugadores, ArrayList<Team> listaEquipos, ArrayList<PlayerXTeam> pxteamlist) {
+        ListaJugadores = (ArrayList<Player>) listaJugadores;
         teamList=listaEquipos;
         pxtList=pxteamlist;
     }
