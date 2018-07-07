@@ -57,9 +57,9 @@ public class FavoritePlayersFragment extends Fragment {
                 "Considerado uno de los mejores porteros del mundo", "Costa Rica"));
         playerList.add(new Player(3,R.drawable.messi, "Lionel Andres Messi Cuccittini","Messi","24/06/1987",
                 "Ganador de 5 balones de oro", "Argentina"));
-        teamList.add(new Team(1,"Real Madrid","Spain",R.drawable.ronaldo,"LaLiga"));
+        teamList.add(new Team(1,"Real Madrid","Spain",R.drawable.ronaldo,"LaLiga", "Madrid"));
 
-        teamList.add(new Team(2,"Barcelona F.C.","Spain",R.drawable.ronaldo,"LaLiga"));
+        teamList.add(new Team(2,"Barcelona F.C.","Spain",R.drawable.ronaldo,"LaLiga", "Barcelona"));
 
         pxtList.add(new PlayerXTeam(1,"Delantero",1,1,"2","2","0","0","0"));
         pxtList.add(new PlayerXTeam(2,"Portero",2,1,"2","2","siempre","0","0"));

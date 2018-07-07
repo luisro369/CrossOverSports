@@ -20,8 +20,14 @@ public class Tournament {
 
 
     @ColumnInfo(name="tournament_avatar")
-    private String tournamentAvatar;
+    private Integer tournamentAvatar;
 
+    public Tournament(Integer tournamentId, String tournamentName, String tournamentCountry, Integer tournamentAvatar) {
+        this.tournamentId = tournamentId;
+        this.tournamentName = tournamentName;
+        this.tournamentCountry = tournamentCountry;
+        this.tournamentAvatar = tournamentAvatar;
+    }
 
     public Integer getTournamentId() {
         return tournamentId;
@@ -47,11 +53,11 @@ public class Tournament {
         this.tournamentCountry = tournamentCountry;
     }
 
-    public String getTournamentAvatar() {
+    public Integer getTournamentAvatar() {
         return tournamentAvatar;
     }
 
-    public void setTournamentAvatar(String tournamentAvatar) {
+    public void setTournamentAvatar(Integer tournamentAvatar) {
         this.tournamentAvatar = tournamentAvatar;
     }
 }

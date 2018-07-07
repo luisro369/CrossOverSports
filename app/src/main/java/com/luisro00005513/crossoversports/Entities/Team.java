@@ -22,12 +22,16 @@ public class Team {
     @ColumnInfo(name="team_division")
     private String teamDivision;
 
-    public Team(Integer teamId, String teamName, String teamCountry, Integer teamAvatar, String teamDivision) {
+    @ColumnInfo(name="team_city")
+    private String teamCity;
+
+    public Team(Integer teamId, String teamName, String teamCountry, Integer teamAvatar, String teamDivision, String teamCity) {
         this.teamId = teamId;
         this.teamName = teamName;
         this.teamCountry = teamCountry;
         this.teamAvatar = teamAvatar;
         this.teamDivision = teamDivision;
+        this.teamCity = teamCity;
     }
 
     public Integer getTeamId() {
@@ -68,5 +72,13 @@ public class Team {
 
     public void setTeamDivision(String teamDivision) {
         this.teamDivision = teamDivision;
+    }
+
+    public String getTeamCity() {
+        return teamCity;
+    }
+
+    public void setTeamCity(String teamCity) {
+        this.teamCity = teamCity;
     }
 }
