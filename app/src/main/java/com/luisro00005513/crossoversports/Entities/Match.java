@@ -36,6 +36,20 @@ public class Match {
     @Expose
     private Integer v;
 
+    //constructor
+
+
+    public Match(String matchId, String tournamentId, String team1Goals, String team2Goals, String rcardT1, String rcardT2, String ycardT1, String ycardT2) {
+        this.matchId = matchId;
+        this.tournamentId = tournamentId;
+        this.team1Goals = team1Goals;
+        this.team2Goals = team2Goals;
+        this.rcardT1 = rcardT1;
+        this.rcardT2 = rcardT2;
+        this.ycardT1 = ycardT1;
+        this.ycardT2 = ycardT2;
+    }
+
     public String getId() {
         return id;
     }
