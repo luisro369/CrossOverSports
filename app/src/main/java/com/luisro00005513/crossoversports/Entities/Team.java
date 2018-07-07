@@ -17,11 +17,18 @@ public class Team {
     private String teamCountry;
 
     @ColumnInfo(name="team_avatar")
-    private String teamAvatar;
+    private Integer teamAvatar;
 
     @ColumnInfo(name="team_division")
     private String teamDivision;
 
+    public Team(Integer teamId, String teamName, String teamCountry, Integer teamAvatar, String teamDivision) {
+        this.teamId = teamId;
+        this.teamName = teamName;
+        this.teamCountry = teamCountry;
+        this.teamAvatar = teamAvatar;
+        this.teamDivision = teamDivision;
+    }
 
     public Integer getTeamId() {
         return teamId;
@@ -47,11 +54,11 @@ public class Team {
         this.teamCountry = teamCountry;
     }
 
-    public String getTeamAvatar() {
+    public Integer getTeamAvatar() {
         return teamAvatar;
     }
 
-    public void setTeamAvatar(String teamAvatar) {
+    public void setTeamAvatar(Integer teamAvatar) {
         this.teamAvatar = teamAvatar;
     }
 

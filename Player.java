@@ -1,42 +1,24 @@
 package com.luisro00005513.crossoversports.Entities;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
 
-@Entity
 public class Player {
 
-    @PrimaryKey
-    @ColumnInfo(name="player_id")
     private Integer playerId;
-
-    @ColumnInfo(name="player_avatar")
-    private Integer playerAvatar;
-
-    @ColumnInfo(name="player_name")
+    private int playerAvatar;
     private String playerName;
-
-    @ColumnInfo(name="player_alias")
     private String playerAlias;
-
-    @ColumnInfo(name="player_birth")
     private String playerBirth;
-
-    @ColumnInfo(name="player_extra")
     private String playerExtra;
-
-    @ColumnInfo(name="player_country")
     private String playerCountry;
 
-    public Player(Integer playerId, Integer playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry) {
+    public Player(Integer playerId, int playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry) {
         this.playerId = playerId;
         this.playerAvatar = playerAvatar;
         this.playerName = playerName;
         this.playerAlias = playerAlias;
         this.playerBirth = playerBirth;
         this.playerExtra = playerExtra;
-        this.setPlayerCountry(playerCountry);
+        this.playerCountry = playerCountry;
     }
 
     public Integer getPlayerId() {
@@ -45,6 +27,14 @@ public class Player {
 
     public void setPlayerId(Integer playerId) {
         this.playerId = playerId;
+    }
+
+    public int getPlayerAvatar() {
+        return playerAvatar;
+    }
+
+    public void setPlayerAvatar(int playerAvatar) {
+        this.playerAvatar = playerAvatar;
     }
 
     public String getPlayerName() {
@@ -77,15 +67,6 @@ public class Player {
 
     public void setPlayerExtra(String playerExtra) {
         this.playerExtra = playerExtra;
-    }
-
-
-    public Integer getPlayerAvatar() {
-        return playerAvatar;
-    }
-
-    public void setPlayerAvatar(Integer playerAvatar) {
-        this.playerAvatar = playerAvatar;
     }
 
     public String getPlayerCountry() {
