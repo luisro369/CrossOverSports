@@ -24,7 +24,7 @@ public interface RetrofitService {
     Call<Login> getToken(@Body Login login);*/
 
     //metodo para poder extraer match de la api
-    @GET("/api/matches")
+    @GET("/api/match")
     public Call<List<Match>> getMatches(@Query("match_id") String matchId, @Query("tournament_id") String tournamentId,
                                      @Query("team1_goals") String team1Goals, @Query("team2_goals") String team2Goals,
                                      @Query("rcard_t1") String team1RCards, @Query("rcard_t2") String team2RCards,

@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
 
-    }
+    }//oncreate
 
             @Override
             public void onFragmentInteraction(Uri uri) {
