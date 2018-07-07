@@ -40,10 +40,9 @@ public class FavoritePlayersFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View viewPlayer=inflater.inflate(R.layout.fragment_favorite_players,container,false);
-        List<Player> playersList = MainActivity.players;
-        playerList = new ArrayList<>();
-        teamList= new ArrayList<>();;
-         pxtList= new ArrayList<>();;
+        List<Player> playersList = MainActivity.db.playerDAO().getAll();
+        teamList= new ArrayList<>();
+         pxtList= new ArrayList<>();
         recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_players);
         recyclerPlayer.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -57,7 +56,7 @@ public class FavoritePlayersFragment extends Fragment {
     }
 
     private void FillPlayerList() {
-        playerList.add(new Player(1,R.drawable.ronaldo, "Cristiano Ronaldo Dos Santos Aveiro","Cristiano Ronaldo","07/02/1985",
+      /*  playerList.add(new Player(1,R.drawable.ronaldo, "Cristiano Ronaldo Dos Santos Aveiro","Cristiano Ronaldo","07/02/1985",
                 "Ganador de 5 balones de oro", "Portugal"));
         playerList.add(new Player(2,R.drawable.navas, "Keylor Antonio Navas Gamboa","Keylor Navas","15/10/1986",
                 "Considerado uno de los mejores porteros del mundo", "Costa Rica"));
@@ -70,7 +69,7 @@ public class FavoritePlayersFragment extends Fragment {
         pxtList.add(new PlayerXTeam(1,"Delantero",1,1,"2","2","0","0","0"));
         pxtList.add(new PlayerXTeam(2,"Portero",2,1,"2","2","siempre","0","0"));
         pxtList.add(new PlayerXTeam(3,"Delantero",3,2,"2","2","0","0","0"));
-
+*/
 
     }
 

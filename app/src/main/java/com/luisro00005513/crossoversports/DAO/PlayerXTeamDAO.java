@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface PlayerXTeamDAO {
     @Query("SELECT * FROM PlayerXTeam")
-    List<PlayerXTeamDAO> getAll();
+    List<PlayerXTeam> getAll();
 
     @Query("SELECT team_id FROM PlayerXTeam WHERE player_id=:playerId")
     PlayerXTeam playerById(Integer playerId);

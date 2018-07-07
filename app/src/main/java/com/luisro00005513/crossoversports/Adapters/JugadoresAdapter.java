@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Entities.Player;
 import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
@@ -19,14 +20,14 @@ import java.util.List;
 
 public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.ViewHolderJugadores> {
 
-    ArrayList<Player> ListaJugadores;
+    List<Player> ListaJugadores;
     ArrayList<Team> teamList;
     ArrayList<PlayerXTeam> pxtList;
     Integer team;
 
 
     public JugadoresAdapter(List<Player> listaJugadores, ArrayList<Team> listaEquipos, ArrayList<PlayerXTeam> pxteamlist) {
-        ListaJugadores = (ArrayList<Player>) listaJugadores;
+        ListaJugadores = listaJugadores;
         teamList=listaEquipos;
         pxtList=pxteamlist;
     }
@@ -50,20 +51,11 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
        holder.playerAlias.setText(ListaJugadores.get(position).getPlayerAlias());
        holder.playerCountry.setText(ListaJugadores.get(position).getPlayerCountry());
        idPlayer=ListaJugadores.get(position).getPlayerId();
-       listSize=pxtList.size();
-       for(int i=0;i<listSize;i++){
-           idPlayerList=pxtList.get(i).getPlayerId();
-           if(idPlayer==idPlayerList){
-               team=pxtList.get(i).getTeamId();
-           }
-       }
-        for(int i=0;i<teamList.size();i++){
-            teamList2=teamList.get(i).getTeamId();
-            if(team==teamList2){
-                holder.playerTeam.setText((teamList.get(i).getTeamName()));
-                Log.d("hola",teamList.get(i).getTeamName());
-            }
-        }
+        PlayerXTeam team= MainActivity.db.playerXTeamDAO().playerById(idPlayer);
+        Integer teamId = team.getTeamId();
+        Team teamName = MainActivity.db.teamDAO().teamNameById(teamId);
+        String tname = teamName.getTeamName();
+        holder.playerTeam.setText(tname);
     }
 
     @Override

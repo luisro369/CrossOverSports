@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements
     public Fragment fragmentManage = new FragmentoManage();
     public Fragment fragmentCreate = new FragmentoCreate();
     public static  XoverDatabase db;
-    public static List<Player> players;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new  BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -86,11 +85,9 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final XoverDatabase db = Room.databaseBuilder(getApplicationContext(), XoverDatabase.class, "xover")
+         db = Room.databaseBuilder(getApplicationContext(), XoverDatabase.class, "xover")
                 .allowMainThreadQueries()
                 .build();
-        players= db.playerDAO().getAll();
-
 /*
        db.playerDAO().insertAll(new Player(2,R.drawable.navas,"cristiano","cr7"
         ,"10/10/10","info extra cr7","Portugal"));
