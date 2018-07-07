@@ -18,6 +18,8 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManage;
 import com.luisro00005513.crossoversports.R;
+import com.luisro00005513.crossoversports.retrofit.RetrofitService;
+import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
@@ -77,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);

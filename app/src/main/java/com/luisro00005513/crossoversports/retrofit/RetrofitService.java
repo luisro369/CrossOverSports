@@ -1,18 +1,16 @@
 package com.luisro00005513.crossoversports.retrofit;
 
-import com.luisro00005513.crossoversports.Entities.Match;
-import com.luisro00005513.crossoversports.Entities.Player;
-import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
-import com.luisro00005513.crossoversports.Entities.Team;
-import com.luisro00005513.crossoversports.Entities.TeamXTournament;
-import com.luisro00005513.crossoversports.Entities.Tournament;
+import com.luisro00005513.crossoversports.retrofit.extras.Match;
+import com.luisro00005513.crossoversports.retrofit.extras.Player;
+import com.luisro00005513.crossoversports.retrofit.extras.PlayerXTeam;
+import com.luisro00005513.crossoversports.retrofit.extras.Team;
+import com.luisro00005513.crossoversports.retrofit.extras.TeamXTournament;
+import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
 
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**

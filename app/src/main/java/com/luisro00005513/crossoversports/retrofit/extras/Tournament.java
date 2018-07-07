@@ -1,4 +1,4 @@
-package com.luisro00005513.crossoversports.Entities;
+package com.luisro00005513.crossoversports.retrofit.extras;
 
 
 import com.google.gson.annotations.Expose;
