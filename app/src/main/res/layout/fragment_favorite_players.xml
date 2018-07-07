@@ -5,6 +5,7 @@
     tools:context="com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment">
 
     <TextView
+        android:id="@+id/borrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Fragmento players favoritos papi"
