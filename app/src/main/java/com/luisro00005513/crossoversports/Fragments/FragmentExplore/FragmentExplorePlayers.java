@@ -10,16 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.PlayersAdapter;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
 import com.luisro00005513.crossoversports.retrofit.extras.Player;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.

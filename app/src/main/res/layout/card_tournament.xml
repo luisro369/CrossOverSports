@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryLightColor">
+
+    <ImageView
+        android:id="@+id/tournament_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#fff"
+        android:src="@drawable/trophy"/>
+    <TextView
+        android:id="@+id/tournament_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tournament Name"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@color/secondaryDarkColor"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/tournament_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/primaryTextColor"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

@@ -6,23 +6,11 @@
     tools:context="com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:id="@+id/borrame_imagen"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/gentek"
-        />
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_players"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryLightColor">
 
-    <TextView
-        android:id="@+id/borrame"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fragmento players favoritos papi"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:background="@color/rojo"
-        />
-
+</android.support.v7.widget.RecyclerView>
 </LinearLayout>
