@@ -14,7 +14,7 @@ public interface PlayerXTeamDAO {
     List<PlayerXTeam> getAll();
 
     @Query("SELECT team_id FROM PlayerXTeam WHERE player_id=:playerId")
-    PlayerXTeam playerById(Integer playerId);
+    PlayerXTeam playerById(Long playerId);
 
     @Insert
     void insertAll(PlayerXTeam... playerXTeams);

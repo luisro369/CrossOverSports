@@ -21,6 +21,7 @@ import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCrea
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
 import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManage;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements
         FavoritePlayersFragment.OnFragmentInteractionListener,
         FavoriteTeamFragment.OnFragmentInteractionListener
         {
-
+    public Fragment fragmentLogin = new FragmentoLogin();
     public Fragment fragmentHome = new FragmentoHome();
     public Fragment fragmentExplore = new FragmentoExplore();
     public Fragment fragmentManage = new FragmentoManage();
@@ -88,20 +89,15 @@ public class MainActivity extends AppCompatActivity implements
          db = Room.databaseBuilder(getApplicationContext(), XoverDatabase.class, "xover")
                 .allowMainThreadQueries()
                 .build();
-/*
-       db.playerDAO().insertAll(new Player(2,R.drawable.navas,"cristiano","cr7"
-        ,"10/10/10","info extra cr7","Portugal"));
-/*
-        List<Player> players= db.playerDAO().getAll();
-        Log.d("holaroom",players.get(0).getPlayerName());
-        Log.d("holaroom",players.get(1).getPlayerName());
-        */
+         /*db.playerDAO().insertPlayer(new Player(R.drawable.navas,"Cristiano","Ronaldo",
+                 "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         if(savedInstanceState == null){
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
-            fr.replace(R.id.fragmento_padre, fragmentHome);
+            fr.replace(R.id.fragmento_padre, fragmentLogin);
             fr.addToBackStack(null);
             fr.commit();
         }//le digo que fragment hacer default
@@ -111,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
     }
+
 
             @Override
             public void onFragmentInteraction(Uri uri) {
