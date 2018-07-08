@@ -12,9 +12,10 @@ import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
 
-public class TournamentAdapter extends RecyclerView.Adapter<TournamentAdapter.ViewHolderTournament> {
+public class TournamentAdapter extends RecyclerView.Adapter<TournamentAdapter.ViewHolderTournament> implements View.OnClickListener {
 
     ArrayList<Tournament> ListTournament;
+    private View.OnClickListener  listener;
 
     public TournamentAdapter(ArrayList<Tournament> listTournament) {
         ListTournament = listTournament;
@@ -25,6 +26,8 @@ public class TournamentAdapter extends RecyclerView.Adapter<TournamentAdapter.Vi
         View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_tournament, null, false);
         RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         rootView.setLayoutParams(lp);
+
+        rootView.setOnClickListener(this);
 
         return new ViewHolderTournament(rootView);
     }
@@ -40,6 +43,18 @@ public class TournamentAdapter extends RecyclerView.Adapter<TournamentAdapter.Vi
     @Override
     public int getItemCount() {
         return ListTournament.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (listener!=null){
+            listener.onClick(view);
+        }
+
     }
 
     public class ViewHolderTournament extends RecyclerView.ViewHolder {

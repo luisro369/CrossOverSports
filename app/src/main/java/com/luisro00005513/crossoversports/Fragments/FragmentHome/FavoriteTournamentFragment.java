@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.luisro00005513.crossoversports.Adapters.TeamAdapter;
 import com.luisro00005513.crossoversports.Adapters.TournamentAdapter;
@@ -45,6 +46,8 @@ public class FavoriteTournamentFragment extends Fragment {
 
         TournamentAdapter adapter = new TournamentAdapter(tournamentList);
         recyclerTournament.setAdapter(adapter);
+
+
 
         return viewGroup;
 
