@@ -2,6 +2,7 @@ package com.luisro00005513.crossoversports.Fragments.FragmentCreate;
 
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +55,8 @@ public class FragmentCreatePlayers extends Fragment {
                 String createdBy= FragmentoLogin.user;
                 MainActivity.db.playerDAO().insertPlayer(new Player(R.drawable.navas,name,alias,
                         birth,extra,country,createdBy));
+                Snackbar.make(view, "Jugador "+name+" creado exitosamente" , Snackbar.LENGTH_SHORT)
+                        .show();
             }
         });
         return view;
