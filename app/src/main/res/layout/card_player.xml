@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/player_team_text"
                 android:layout_marginLeft="16dp"
-                android:text="Real Madrid C.F."
+                android:text="No team"
                 android:textColor="#000"
                 android:textSize="12sp" />
             <TextView

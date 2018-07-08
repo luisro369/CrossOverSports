@@ -1,4 +1,5 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,7 +7,7 @@
     android:layout_gravity="center"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:background="@color/primaryLightColor">
+    android:background="@color/blanco">
 
     <LinearLayout
         android:id="@+id/create_form"
@@ -20,13 +21,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/primaryDarkColor"
+            android:background="@color/blanco"
             android:gravity="center">
             <ImageView
                 android:id="@+id/create_playeravatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_player_avatar"
+                app:srcCompat="@drawable/ic_player_avatar"
                 android:background="@color/secondaryLightColor"
                 android:gravity="center"
                 android:layout_gravity="center"
@@ -41,7 +42,7 @@
             android:text="@string/create_playername"
             android:gravity="center"/>
         <EditText
-            android:id="@+id/crete_playername_edit"
+            android:id="@+id/player_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
@@ -52,7 +53,7 @@
             android:text="@string/create_shownname"
             android:gravity="center"/>
         <EditText
-            android:id="@+id/crete_playerknown_edit"
+            android:id="@+id/player_alias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
@@ -61,82 +62,33 @@
             android:layout_height="wrap_content"
             android:text="@string/create_payerbirth"
             android:gravity="center"/>
-        <RelativeLayout
-            android:id="@+id/create_player_spinners"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Spinner
-                android:id="@+id/birth_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"></Spinner>
-            <Spinner
-                android:id="@+id/birth_month"
-                android:layout_toRightOf="@id/birth_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"></Spinner>
-            <Spinner
-                android:id="@+id/birth_year"
-                android:layout_toRightOf="@id/birth_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"></Spinner>
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/create_player_country"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/create_player_city"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Spinner
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"></Spinner>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/crete_extrainfo_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/create_extra"
-            android:gravity="center"/>
         <EditText
-            android:id="@+id/crete_player_extrainfo"
+            android:id="@+id/player_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_player_searchkey_text"
+            android:text="@string/create_player_country"
             android:gravity="center"/>
         <EditText
-            android:id="@+id/create_player_searchkey"
+            android:id="@+id/player_country"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Info extra"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/player_extra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
         <Button
-            android:id="@+id/create_playername_button"
+            android:id="@+id/btnCreate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_addplayer"

@@ -9,7 +9,7 @@ public class Player {
 
     @PrimaryKey
     @ColumnInfo(name="player_id")
-    private Integer playerId;
+    private Long playerId;
 
     @ColumnInfo(name="player_avatar")
     private Integer playerAvatar;
@@ -29,21 +29,24 @@ public class Player {
     @ColumnInfo(name="player_country")
     private String playerCountry;
 
-    public Player(Integer playerId, Integer playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry) {
-        this.playerId = playerId;
+    @ColumnInfo(name = "player_createdby")
+    private String playerCreatedBy;
+
+    public Player(Integer playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry, String playerCreatedBy) {
         this.playerAvatar = playerAvatar;
         this.playerName = playerName;
         this.playerAlias = playerAlias;
         this.playerBirth = playerBirth;
         this.playerExtra = playerExtra;
-        this.setPlayerCountry(playerCountry);
+        this.playerCountry = playerCountry;
+        this.playerCreatedBy = playerCreatedBy;
     }
 
-    public Integer getPlayerId() {
+    public Long getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(Integer playerId) {
+    public void setPlayerId(Long playerId) {
         this.playerId = playerId;
     }
 
@@ -94,5 +97,13 @@ public class Player {
 
     public void setPlayerCountry(String playerCountry) {
         this.playerCountry = playerCountry;
+    }
+
+    public String getPlayerCreatedBy() {
+        return playerCreatedBy;
+    }
+
+    public void setPlayerCreatedBy(String playerCreatedBy) {
+        this.playerCreatedBy = playerCreatedBy;
     }
 }
