@@ -97,7 +97,7 @@ public class FragmentExploreTournaments extends Fragment {
 
     private void CreandoCardViews(){
         //=========codigo para CardView de players=============
-        recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_tournament_players);
+        recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_explore_tournament);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         TournamentsAdapter tournamentsAdapter = new TournamentsAdapter(getContext(),listTournaments);//modifique esto
         recyclerView.setAdapter(tournamentsAdapter);

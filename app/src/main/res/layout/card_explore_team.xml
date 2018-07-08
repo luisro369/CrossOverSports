@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="4dp"
+    android:gravity="center"
+    >
 
-    <ImageView
-        android:id="@+id/explore_team_image"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:background="#000"
-        android:src="@drawable/shield"/>
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="3"
-        android:orientation="vertical"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/explore_team_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_margin="4dp"
+            android:id="@+id/team_avatar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Team (name)"
-            android:background="@color/secondaryDarkColor"/>
+            android:layout_height="170dp"
+            android:src="@drawable/gentek"
+            android:scaleType="fitXY"
+            android:scaleX="1"
+            android:scaleY="1"
+            />
+
+
         <TextView
-            android:id="@+id/explore_team_country"
-            android:layout_width="match_parent"
+            android:id="@+id/team_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country"
-            android:textSize="10sp"/>
+            android:padding="2dp"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:textSize="19sp"
+            android:text="Nombre del jugador"/>
+
+        <TextView
+            android:id="@+id/team_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:text="Descripcion del jugador"
+            android:textSize="17sp"/>
+
+
     </LinearLayout>
 
 
