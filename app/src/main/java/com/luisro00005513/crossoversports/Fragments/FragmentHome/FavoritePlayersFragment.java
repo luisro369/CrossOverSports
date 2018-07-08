@@ -1,9 +1,13 @@
 package com.luisro00005513.crossoversports.Fragments.FragmentHome;
 
 
+import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +15,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.luisro00005513.crossoversports.retrofit.RetrofitService;
 import com.luisro00005513.crossoversports.retrofit.extras.Player;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
+import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -24,8 +32,6 @@ import java.util.ArrayList;
  */
 public class FavoritePlayersFragment extends Fragment {
 
-    TextView borrame;
-    ImageView borrameImagen;
 
     public FavoritePlayersFragment() {
         // Required empty public constructor
@@ -37,96 +43,6 @@ public class FavoritePlayersFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_players, container, false);
-        borrame = (TextView)viewGroup.findViewById(R.id.borrame);
-        borrameImagen = (ImageView)viewGroup.findViewById(R.id.borrame_imagen);
-
-        //==========llamada de player=================
-        RetrofitServices player = new RetrofitServices();
-        ArrayList<Player> listPlayers = player.getPlayers();
-        if(listPlayers.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"player 1 name: "+listPlayers.get(0).getPlayerName(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"player 2 name: "+listPlayers.get(1).getPlayerName(),Toast.LENGTH_LONG).show();
-            borrame.setText(listPlayers.get(0).getPlayerName());
-            Picasso.with(getParentFragment().getContext()).load(listPlayers.get(0).getPlayerAvatar()).into(borrameImagen);
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-
-/*
-        //==========llamada de matches=================
-        RetrofitServices match = new RetrofitServices();
-        ArrayList<Match> listMatches = match.getMatches();
-        if(listMatches.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"matchId: "+listMatches.get(0).getMatchId(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"Team 1 Goals: "+listMatches.get(0).getTeam1Goals(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"Team 2 Goals: "+listMatches.get(0).getTeam2Goals(),Toast.LENGTH_LONG).show();
-            borrame.setText(listMatches.get(0).getTeam1Goals());
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-
-
-
-        //==========llamada de torneos=================
-        RetrofitServices torneo = new RetrofitServices();
-        ArrayList<Tournament> listTorneo = torneo.getTournaments();
-        if(listTorneo.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"tournament 1 country: "+listTorneo.get(0).getTournamentCountry(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"tournament 2 country: "+listTorneo.get(1).getTournamentCountry(),Toast.LENGTH_LONG).show();
-            borrame.setText(listTorneo.get(0).getTournamentCountry());
-
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-        //==========llamada de equipos=================
-        RetrofitServices teams = new RetrofitServices();
-        ArrayList<Team> listTeams = teams.getTeams();
-        if(listTeams.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"equipo 1: "+listTeams.get(0).getTeamName(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"equipo 2: "+listTeams.get(1).getTeamName(),Toast.LENGTH_LONG).show();
-            borrame.setText(listTeams.get(0).getTeamName());
-
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-        //==========llamada de playerxteam=================
-        RetrofitServices pxt = new RetrofitServices();
-        ArrayList<PlayerXTeam> listPxt = pxt.getPlayersXTeams();
-        if(listPxt.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"player1 goals: "+listPxt.get(0).getGoalsScored(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"player2 goals: "+listPxt.get(1).getGoalsScored(),Toast.LENGTH_LONG).show();
-            borrame.setText(listPxt.get(0).getGoalsScored());
-
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-
-        //==========llamada de teamxtournament=================
-        RetrofitServices txt = new RetrofitServices();
-        ArrayList<TeamXTournament> listTxt = txt.getTeamxtournaments();
-        if(listTxt.size() > 1 ) {
-            Toast.makeText(getParentFragment().getContext(),"team1 points: "+listTxt.get(0).getPoints(),Toast.LENGTH_LONG).show();
-            Toast.makeText(getParentFragment().getContext(),"team2 points: "+listTxt.get(1).getPoints(),Toast.LENGTH_LONG).show();
-            borrame.setText(listTxt.get(0).getPoints());
-
-        }
-        else{
-            Toast.makeText(getParentFragment().getContext(),"arreglo nulo",Toast.LENGTH_LONG).show();
-        }
-
-
-        */
-
 
         return viewGroup;
     }//on create view
@@ -136,5 +52,9 @@ public class FavoritePlayersFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+
+
 
 }

@@ -20,6 +20,9 @@ import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManag
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitService;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
+import com.luisro00005513.crossoversports.retrofit.extras.Player;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements
         FavoritePlayersFragment.OnFragmentInteractionListener,
         FavoriteTeamFragment.OnFragmentInteractionListener
         {
+
 
     public Fragment fragmentHome = new FragmentoHome();
     public Fragment fragmentExplore = new FragmentoExplore();
