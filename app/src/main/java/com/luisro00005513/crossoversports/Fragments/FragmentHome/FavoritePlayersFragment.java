@@ -40,7 +40,17 @@ public class FavoritePlayersFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View viewPlayer=inflater.inflate(R.layout.fragment_favorite_players,container,false);
-        List<Player> playersList = MainActivity.db.playerDAO().getAll();
+      //  List<Player> playersList = MainActivity.db.playerDAO().getAll();
+
+        //BUSQUEDA POR CREADOR
+        /*String byCreator = FragmentoLogin.user;
+       List<Player> playersList = MainActivity.db.playerDAO().playerByCreator(byCreator);*/
+
+        //BUSQUEDA POR FAVORITO
+        String byUser = FragmentoLogin.user;
+        List<Player> playersList = MainActivity.db.favoritoXUsuarioDAO().favoriteByUser(byUser);
+
+
         teamList= new ArrayList<>();
          pxtList= new ArrayList<>();
         recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_players);

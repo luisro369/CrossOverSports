@@ -29,13 +29,17 @@ public class Player {
     @ColumnInfo(name="player_country")
     private String playerCountry;
 
-    public Player(Integer playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry) {
+    @ColumnInfo(name = "player_createdby")
+    private String playerCreatedBy;
+
+    public Player(Integer playerAvatar, String playerName, String playerAlias, String playerBirth, String playerExtra, String playerCountry, String playerCreatedBy) {
         this.playerAvatar = playerAvatar;
         this.playerName = playerName;
         this.playerAlias = playerAlias;
         this.playerBirth = playerBirth;
         this.playerExtra = playerExtra;
         this.playerCountry = playerCountry;
+        this.playerCreatedBy = playerCreatedBy;
     }
 
     public Long getPlayerId() {
@@ -93,5 +97,13 @@ public class Player {
 
     public void setPlayerCountry(String playerCountry) {
         this.playerCountry = playerCountry;
+    }
+
+    public String getPlayerCreatedBy() {
+        return playerCreatedBy;
+    }
+
+    public void setPlayerCreatedBy(String playerCreatedBy) {
+        this.playerCreatedBy = playerCreatedBy;
     }
 }

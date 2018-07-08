@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
+import com.luisro00005513.crossoversports.Entities.FavoritoXUsuario;
 import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Entities.User;
 import com.luisro00005513.crossoversports.Entities.XoverDatabase;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTeamFragment;
@@ -92,13 +94,23 @@ public class MainActivity extends AppCompatActivity implements
          /*db.playerDAO().insertPlayer(new Player(R.drawable.navas,"Cristiano","Ronaldo",
                  "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
 
+        //CREACION DE USUARIOS
+        /*db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
+        db.userDAO().insertUser(new User("ricardo","12345","ricardoarroba"));
+        db.userDAO().insertUser(new User("luis","12345","luisarroba"));*/
+
+        //CREACION DE FAVORITOS
+        /*db.favoritoXUsuarioDAO().inserFav(new FavoritoXUsuario("sama",1));
+        db.favoritoXUsuarioDAO().inserFav(new FavoritoXUsuario("sama",4));
+        db.favoritoXUsuarioDAO().inserFav(new FavoritoXUsuario("sama",5));*/
+
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         if(savedInstanceState == null){
             FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
             fr.replace(R.id.fragmento_padre, fragmentLogin);
-            fr.addToBackStack(null);
             fr.commit();
         }//le digo que fragment hacer default
 

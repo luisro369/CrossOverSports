@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Entities.Player;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
 
 /**
@@ -50,8 +51,9 @@ public class FragmentCreatePlayers extends Fragment {
                 String birth = playerBirth.getText().toString();
                 String extra = playerExtra.getText().toString();
                 String country = playerCountry.getText().toString();
+                String createdBy= FragmentoLogin.user;
                 MainActivity.db.playerDAO().insertPlayer(new Player(R.drawable.navas,name,alias,
-                        birth,extra,country));
+                        birth,extra,country,createdBy));
             }
         });
         return view;

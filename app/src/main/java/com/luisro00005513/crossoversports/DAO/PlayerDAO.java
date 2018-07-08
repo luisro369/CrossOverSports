@@ -17,6 +17,12 @@ public interface PlayerDAO {
     @Query(("SELECT * FROM player WHERE player_name = :playerName"))
     Player playerByName(String playerName);
 
+    @Query(("SELECT * FROM player WHERE player_id = :playerId"))
+    Player playerById(Integer playerId);
+
+    @Query(("SELECT * FROM player WHERE player_createdby = :userName"))
+    List<Player> playerByCreator(String userName);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPlayer(Player... players);
 
