@@ -33,6 +33,7 @@
     <!-- strings para boton manage -->
     <string name="manage_tournament">Manage Tournaments</string>
     <string name="manage_team">Manage Teams</string>
+    <string name="manage_player">Manage Players</string>
     <!-- ****************************EXPLORE*********************************************** -->
     <!-- strings para boton explore -->
     <string name="explore_tournament">Explore Tournaments</string>

@@ -8,12 +8,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
-import com.luisro00005513.crossoversports.Entities.FavoritoXUsuario;
-import com.luisro00005513.crossoversports.Entities.Player;
 import com.luisro00005513.crossoversports.Entities.User;
 import com.luisro00005513.crossoversports.Entities.XoverDatabase;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
@@ -22,15 +19,9 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoriteTournam
 import com.luisro00005513.crossoversports.Fragments.FragmentCreate.FragmentoCreate;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoHome;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.FragmentoExplore;
-import com.luisro00005513.crossoversports.Fragments.FagmentManage.FragmentoManage;
+import com.luisro00005513.crossoversports.Fragments.FragmentManage.FragmentoManage;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
-import com.luisro00005513.crossoversports.retrofit.RetrofitService;
-import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
-
-import java.util.ArrayList;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentoHome.OnFragmentInteractionListener,
@@ -100,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements
                  "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
 
         //CREACION DE USUARIOS
-        db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
+     /*   db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
         db.userDAO().insertUser(new User("ricardo","12345","ricardoarroba"));
-        db.userDAO().insertUser(new User("luis","12345","luisarroba"));
+        db.userDAO().insertUser(new User("luis","12345","luisarroba"));*/
 
         //CREACION DE FAVORITOS
         /*db.favoritoXUsuarioDAO().inserFav(new FavoritoXUsuario("sama",1));

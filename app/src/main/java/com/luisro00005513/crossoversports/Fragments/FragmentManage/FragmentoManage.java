@@ -1,4 +1,4 @@
-package com.luisro00005513.crossoversports.Fragments.FagmentManage;
+package com.luisro00005513.crossoversports.Fragments.FragmentManage;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ public class FragmentoManage extends Fragment {
     /**
      * El numero de paginas para enseniar.
      */
-    private static final int NUM_PAGES = 2;
+    private static final int NUM_PAGES = 3;
     //viewPager widget
     private ViewPager mPager;
     //pager adapter, provee las paginas al view pager widget
@@ -49,6 +49,7 @@ public class FragmentoManage extends Fragment {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutManage);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.manage_tournament));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.manage_team));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.players));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //codigo para viewpager
@@ -89,6 +90,9 @@ public class FragmentoManage extends Fragment {
                 case 1:
                     FragmentManageTeams tab2 = new FragmentManageTeams();
                     return tab2;
+                case 2:
+                    FragmentManagePlayers tab3 = new FragmentManagePlayers();
+                    return tab3;
                 default:
                     return null;
             }//switch
