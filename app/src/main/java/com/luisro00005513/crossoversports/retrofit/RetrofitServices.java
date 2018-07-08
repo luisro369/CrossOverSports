@@ -18,8 +18,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.luisro00005513.crossoversports.Activities.MainActivity.service;
-import static com.luisro00005513.crossoversports.Activities.MainActivity.services;
 
 /**
  * Created by luisro on 7/6/18.
