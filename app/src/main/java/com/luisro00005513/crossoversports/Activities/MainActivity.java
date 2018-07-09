@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.luisro00005513.crossoversports.Activities.BottomNavHelper.BottomNavigationViewHelper;
+import com.luisro00005513.crossoversports.Entities.FavoritoXUsuario;
 import com.luisro00005513.crossoversports.Entities.User;
 import com.luisro00005513.crossoversports.Entities.XoverDatabase;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FavoritePlayersFragment;
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements
                  "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
 
         //CREACION DE USUARIOS
-     /*   db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
+        /*db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
         db.userDAO().insertUser(new User("ricardo","12345","ricardoarroba"));
         db.userDAO().insertUser(new User("luis","12345","luisarroba"));*/
 
