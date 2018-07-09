@@ -15,6 +15,7 @@ import com.luisro00005513.crossoversports.Entities.Player;
 import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
 import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
+import com.luisro00005513.crossoversports.Fragments.FragmentManage.Adapters.ManagePlayersAdapter;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
@@ -55,7 +56,8 @@ public class FragmentManagePlayers extends Fragment {
         // FillPlayerList();
         // Log.d("fragmentplayer");
 //        Log.d("porfavor",MainActivity.players.get(0).getPlayerName());
-        JugadoresAdapter adapter = new JugadoresAdapter(playersList,teamList,pxtList);
+
+        ManagePlayersAdapter adapter = new ManagePlayersAdapter(playersList,teamList,pxtList);
         recyclerPlayer.setAdapter(adapter);
 
         return viewPlayer;
