@@ -11,12 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Adapters.TeamAdapter;
 import com.luisro00005513.crossoversports.Adapters.TournamentAdapter;
 import com.luisro00005513.crossoversports.Entities.Tournament;
+import com.luisro00005513.crossoversports.Entities.TournamentFavoritoXUsuario;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,11 +27,10 @@ import java.util.ArrayList;
 public class FavoriteTournamentFragment extends Fragment {
 
     RecyclerView recyclerTournament;
-    ArrayList tournamentList;
 
-
+    List<Tournament> teamList;
     public FavoriteTournamentFragment() {
-        // Required empty public constructor
+        List<Tournament> teamList;
     }
 
 
@@ -36,29 +38,25 @@ public class FavoriteTournamentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_tournament, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorite_tournament, container, false);
 
-        tournamentList = new ArrayList<>();
-        recyclerTournament = (RecyclerView) viewGroup.findViewById(R.id.tournament_recycler);
+        String byUser = FragmentoLogin.user;
+        List<Tournament> teamList2 = MainActivity.db.tournamentrDAO().getAll();
+
+        List<Tournament> teamList = MainActivity.db.tournamentFavoritoXUsuarioDAO().tounamentfav(byUser);
+        recyclerTournament = (RecyclerView) view.findViewById(R.id.tournament_recycler);
         recyclerTournament.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FillTournamentList();
 
-        TournamentAdapter adapter = new TournamentAdapter(tournamentList);
+        TournamentAdapter adapter = new TournamentAdapter(teamList2);
         recyclerTournament.setAdapter(adapter);
 
 
 
-        return viewGroup;
+        return view;
 
     }
 
-    private void FillTournamentList() {
-        tournamentList.add(new Tournament(1, "La Liga", "Spain", R.drawable.la_liga));
-        tournamentList.add(new Tournament(2, "Premier League", "England", R.drawable.premier));
-        tournamentList.add(new Tournament(3, "Bundesliga", "Germany", R.drawable.bundesliga));
-
-    }
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

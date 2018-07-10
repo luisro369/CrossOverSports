@@ -53,7 +53,14 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
        holder.playerAlias.setText(ListaJugadores.get(position).getPlayerAlias());
        holder.playerCountry.setText(ListaJugadores.get(position).getPlayerCountry());
        idPlayer=ListaJugadores.get(position).getPlayerId();
+        if(MainActivity.db.favoritoXUsuarioDAO().finById(idPlayer)!=null){
+            flag = true;
+            holder.playerFavorite.setImageResource(R.drawable.ic_favorite_true);
+        }else{
+            flag=false;
+        }
         holder.playerFavorite.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 if(flag) {

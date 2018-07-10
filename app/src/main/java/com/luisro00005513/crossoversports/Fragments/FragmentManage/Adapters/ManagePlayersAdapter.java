@@ -52,7 +52,7 @@ public class ManagePlayersAdapter extends RecyclerView.Adapter<ManagePlayersAdap
        holder.playerCountry.setText(ListaJugadores.get(position).getPlayerCountry());
        idPlayer=ListaJugadores.get(position).getPlayerId();
        if(MainActivity.db.favoritoXUsuarioDAO().finById(idPlayer)!=null){
-           flag = true;
+           flag = false;
            holder.playerFavorite.setImageResource(R.drawable.ic_favorite_true);
        }
 
