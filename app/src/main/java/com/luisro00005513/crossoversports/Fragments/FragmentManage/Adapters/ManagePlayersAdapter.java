@@ -35,6 +35,7 @@ public class ManagePlayersAdapter extends RecyclerView.Adapter<ManagePlayersAdap
     public ViewHolderJugadores onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_manage_player, null, false);
 
+
         return new ViewHolderJugadores(view);
     }
 

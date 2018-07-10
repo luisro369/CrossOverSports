@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Adapters.TeamAdapter;
 import com.luisro00005513.crossoversports.Entities.Team;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,23 +38,14 @@ public class FavoriteTeamFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_team, container, false);
 
-        teamListRec = new ArrayList<>();
+        List<Team> teamList = MainActivity.db.teamDAO().getAll();
         recyclerTeam = (RecyclerView) viewGroup.findViewById(R.id.team_recycler);
         recyclerTeam.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FillTeamList();
-
-        TeamAdapter adapter = new TeamAdapter(teamListRec);
+        TeamAdapter adapter = new TeamAdapter(teamList);
         recyclerTeam.setAdapter(adapter);
 
         return viewGroup;
-    }
-
-    private void FillTeamList() {
-        teamListRec.add(new Team(1, "Real Madrid C.F.", "Spain", R.drawable.real_madrid,
-                "La Liga", "Madrid"));
-        teamListRec.add(new Team(2,"F.C. Barcelona", "Spain", R.drawable.barcelona,"" +
-                "La Liga", "Barcelona"));
     }
 
 
