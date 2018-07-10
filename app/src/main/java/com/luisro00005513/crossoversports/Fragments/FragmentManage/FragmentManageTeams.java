@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Adapters.TeamAdapter;
 import com.luisro00005513.crossoversports.Entities.Team;
@@ -17,12 +18,22 @@ import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.List;
+import com.luisro00005513.crossoversports.Adapters.ManageTeamAdapter;
+import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Entities.Tournament;
+import com.luisro00005513.crossoversports.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class FragmentManageTeams extends Fragment {
     RecyclerView recyclerTeam;
+
+    RecyclerView recyclerManageTeam;
+    ArrayList manageTeamList;
+
 
 
     public FragmentManageTeams() {
@@ -34,24 +45,23 @@ public class FragmentManageTeams extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_favorite_team, container, false);
+        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_manage_teams, container, false);
 
-        //BUSQUEDA POR CREADOR
-        String byCreator = FragmentoLogin.user;
-        List<Team> teamList = MainActivity.db.teamDAO().teamByCreator(byCreator);
-
-        recyclerTeam = (RecyclerView) view.findViewById(R.id.team_recycler);
-        recyclerTeam.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        TeamAdapter adapter = new TeamAdapter(teamList);
-        recyclerTeam.setAdapter(adapter);
+        manageTeamList = new ArrayList<>();
+        recyclerManageTeam = (RecyclerView) viewGroup.findViewById(R.id.manage_team_recycler);
+        recyclerManageTeam.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        return  view;
+        ManageTeamAdapter adapter = new ManageTeamAdapter(manageTeamList);
+        recyclerManageTeam.setAdapter(adapter);
 
+        return viewGroup;
     }
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
+
+
+public interface OnFragmentInteractionListener {
+    // TODO: Update argument type and name
+    void onFragmentInteraction(Uri uri);
+}
+
 }

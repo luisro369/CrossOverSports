@@ -15,11 +15,11 @@
         android:layout_marginTop="8dp">
 
         <ImageView
-            android:id="@+id/player_image"
+            android:id="@+id/manage_tournament_image"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1.5"
-            android:src="@drawable/ronaldo"
+            android:src="@drawable/trophy"
 
             android:background="#000"/>
 
@@ -30,20 +30,20 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/player_name"
+                android:id="@+id/manage_tournament_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cristiano Ronaldo Dos Santos Aveiro"
+                android:text="Tournament's country"
                 android:layout_margin="4sp"
                 android:textSize="10sp"
                 android:textColor="#000"/>
 
             <TextView
-                android:id="@+id/player_knownas"
+                android:id="@+id/manage_tournament_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/player_name"
-                android:text="Cristiano Ronaldo"
+                android:layout_below="@id/manage_tournament_category"
+                android:text="Team's Name"
                 android:layout_margin="4sp"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -51,50 +51,7 @@
                 android:background="@color/secondaryDarkColor"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"/>
-            <TextView
-                android:id="@+id/player_team_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Team"
-                android:layout_below="@id/player_knownas"
-                android:textSize="10sp"
-                android:layout_marginTop="4sp"
-                android:layout_marginBottom="4sp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="8sp"
-                android:textColor="#000"/>
-            <TextView
-                android:id="@+id/player_country_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Country"
-                android:textSize="10sp"
-                android:layout_below="@id/player_knownas"
-                android:layout_marginTop="4sp"
-                android:layout_marginBottom="4sp"
-                android:layout_marginRight="8sp"
-                android:textColor="#000"
-                android:layout_alignLeft="@id/player_country"/>
 
-            <TextView
-                android:id="@+id/player_team"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/player_team_text"
-                android:layout_marginLeft="16dp"
-                android:text="No team"
-                android:textColor="#000"
-                android:textSize="12sp" />
-            <TextView
-                android:id="@+id/player_country"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/player_team_text"
-                android:layout_toRightOf="@id/player_team"
-                android:text="Portugal"
-                android:textSize="12sp"
-                android:layout_marginLeft="26dp"
-                android:textColor="#000"/>
 
         </RelativeLayout>
 
@@ -105,7 +62,6 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:id="@+id/player_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -113,7 +69,6 @@
                 android:background="@color/blanco"
                 android:layout_marginBottom="4dp"/>
             <ImageView
-                android:id="@+id/player_delete"
                 android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

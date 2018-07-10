@@ -14,6 +14,11 @@
         android:layout_height="150dp"
         android:background="#000"
         android:src="@drawable/shield"/>
+    <ImageView
+        android:id="@+id/team_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_true"/>
     <TextView
         android:id="@+id/team_name"
         android:layout_width="match_parent"
@@ -45,5 +50,6 @@
             android:text="Country"
             android:layout_marginBottom="4dp"/>
     </LinearLayout>
+
 
 </LinearLayout>
