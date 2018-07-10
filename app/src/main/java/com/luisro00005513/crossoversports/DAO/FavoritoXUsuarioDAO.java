@@ -13,9 +13,15 @@ import java.util.List;
 @Dao
 public interface FavoritoXUsuarioDAO {
     //SELECT * FROM Table1, Table2 WHERE Table1.id = Table2.id_table1
-    @Query(("SELECT Player.player_avatar,Player.player_name,Player.player_alias,Player.player_birth,Player.player_extra,Player.player_country,Player.player_createdby FROM Player,FavoritoXUsuario WHERE FavoritoXUsuario.user_name = :userName AND FavoritoXUsuario.player_id = Player.player_id"))
+    @Query(("SELECT Player.player_id,Player.player_avatar,Player.player_name,Player.player_alias,Player.player_birth,Player.player_extra,Player.player_country,Player.player_createdby FROM Player,FavoritoXUsuario WHERE FavoritoXUsuario.user_name = :userName AND FavoritoXUsuario.player_id = Player.player_id"))
     List<Player> favoriteByUser(String userName);
+
+    @Query("SELECT * FROM FavoritoXUsuario where player_id= :byId")
+    FavoritoXUsuario finById(Long byId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void inserFav(FavoritoXUsuario... favoritoXUsuarios);
+
+    @Query("delete from FavoritoXUsuario where player_id = :favoriteId")
+    int deleteFavorite(Long favoriteId);
 }
