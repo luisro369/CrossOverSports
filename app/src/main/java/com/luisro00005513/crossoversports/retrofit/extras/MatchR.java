@@ -3,7 +3,7 @@ package com.luisro00005513.crossoversports.retrofit.extras;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Match {
+public class MatchR {
 
     @SerializedName("_id")
     @Expose
@@ -39,7 +39,7 @@ public class Match {
     //constructor
 
 
-    public Match(String matchId, String tournamentId, String team1Goals, String team2Goals, String rcardT1, String rcardT2, String ycardT1, String ycardT2) {
+    public MatchR(String matchId, String tournamentId, String team1Goals, String team2Goals, String rcardT1, String rcardT2, String ycardT1, String ycardT2) {
         this.matchId = matchId;
         this.tournamentId = tournamentId;
         this.team1Goals = team1Goals;

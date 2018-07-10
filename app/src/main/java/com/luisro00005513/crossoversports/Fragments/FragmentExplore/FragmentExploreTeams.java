@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.TeamsAdapter;
-import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.TournamentsAdapter;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
-import com.luisro00005513.crossoversports.retrofit.extras.Team;
-import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
+import com.luisro00005513.crossoversports.retrofit.extras.TeamR;
 
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class FragmentExploreTeams extends Fragment {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
-    public static List<Team> listTeams;
+    public static List<TeamR> listTeamRS;
 
     public FragmentExploreTeams() {
         // Required empty public constructor
@@ -52,7 +50,7 @@ public class FragmentExploreTeams extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if(listTeams != null) {
+        if(listTeamRS != null) {
             CreandoCardViews();
         }
     }
@@ -63,17 +61,17 @@ public class FragmentExploreTeams extends Fragment {
         Thread thread = new Thread(){
             public void run(){
                 RetrofitServices player = new RetrofitServices();
-                listTeams = player.getTeams();
+                listTeamRS = player.getTeams();
             }//run in backgorund
         };thread.start();
 
-        if(listTeams == null) {
+        if(listTeamRS == null) {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     //----------------llamada a views y llenarlos con lista(tienen que estar en un if)----
                     //-----aca se setean todas las views a lo que uno quiera
-                    if (listTeams != null) {
+                    if (listTeamRS != null) {
                         CreandoCardViews();
                     }
                     //------------------------------------------------
@@ -97,7 +95,7 @@ public class FragmentExploreTeams extends Fragment {
         //=========codigo para CardView de players=============
         recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_team_explore);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        TeamsAdapter teamsAdapter = new TeamsAdapter(getContext(),listTeams);//modifique esto
+        TeamsAdapter teamsAdapter = new TeamsAdapter(getContext(), listTeamRS);//modifique esto
         recyclerView.setAdapter(teamsAdapter);
         //=========codigo para CardView de players(fin)========
     }

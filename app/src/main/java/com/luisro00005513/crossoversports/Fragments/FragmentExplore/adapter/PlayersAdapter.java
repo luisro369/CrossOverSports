@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.luisro00005513.crossoversports.R;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
+import com.luisro00005513.crossoversports.retrofit.extras.PlayerR;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,10 +19,10 @@ import java.util.List;
 
 public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapterViewHolder> {
 
-    List<Player> playersList;
+    List<PlayerR> playersList;
     private Context context;
 
-    public PlayersAdapter(Context context, List<Player> playersList){
+    public PlayersAdapter(Context context, List<PlayerR> playersList){
         this.playersList = playersList;
         this.context = context;
 

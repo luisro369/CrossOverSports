@@ -40,7 +40,7 @@ public class FragmentManagePlayers extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View viewPlayer= inflater.inflate(R.layout.fragment_manage_players, container, false);
-        //  List<Player> playersList = MainActivity.db.playerDAO().getAll();
+        //  List<PlayerR> playersList = MainActivity.db.playerDAO().getAll();
 
         //BUSQUEDA POR CREADOR
         String byCreator = FragmentoLogin.user;
@@ -48,7 +48,7 @@ public class FragmentManagePlayers extends Fragment {
 
         //BUSQUEDA POR FAVORITO
       //  String byUser = FragmentoLogin.user;
-        //List<Player> playersList = MainActivity.db.favoritoXUsuarioDAO().favoriteByUser(byUser);
+        //List<PlayerR> playersList = MainActivity.db.favoritoXUsuarioDAO().favoriteByUser(byUser);
 
         recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_manage_players);
         recyclerPlayer.setLayoutManager(new LinearLayoutManager(getContext()));

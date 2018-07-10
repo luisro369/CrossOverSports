@@ -51,9 +51,9 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
        holder.playerAlias.setText(ListaJugadores.get(position).getPlayerAlias());
        holder.playerCountry.setText(ListaJugadores.get(position).getPlayerCountry());
        idPlayer=ListaJugadores.get(position).getPlayerId();
-        //PlayerXTeam team= MainActivity.db.playerXTeamDAO().playerById(idPlayer);
+        //PlayerXTeamR team= MainActivity.db.playerXTeamDAO().playerById(idPlayer);
       //  Integer teamId = team.getTeamId();
-        //Team teamName = MainActivity.db.teamDAO().teamNameById(teamId);
+        //TeamR teamName = MainActivity.db.teamDAO().teamNameById(teamId);
        // String tname = teamName.getTeamName();
        // holder.playerTeam.setText(tname);
     }

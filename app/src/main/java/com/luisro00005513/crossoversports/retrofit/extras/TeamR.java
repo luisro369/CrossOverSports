@@ -4,7 +4,7 @@ package com.luisro00005513.crossoversports.retrofit.extras;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Team {
+public class TeamR {
 
     @SerializedName("_id")
     @Expose
@@ -30,7 +30,7 @@ public class Team {
 
 
     //controlador
-    public Team(String teamId, String teamName, String teamCountry, String teamAvatar, String teamDivision) {
+    public TeamR(String teamId, String teamName, String teamCountry, String teamAvatar, String teamDivision) {
         this.teamId = teamId;
         this.teamName = teamName;
         this.teamCountry = teamCountry;

@@ -1,23 +1,16 @@
 package com.luisro00005513.crossoversports.retrofit;
 
-import android.app.Service;
-import android.content.ServiceConnection;
-import android.util.Log;
-
-import com.luisro00005513.crossoversports.retrofit.extras.Match;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
-import com.luisro00005513.crossoversports.retrofit.extras.PlayerXTeam;
-import com.luisro00005513.crossoversports.retrofit.extras.Team;
-import com.luisro00005513.crossoversports.retrofit.extras.TeamXTournament;
-import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
+import com.luisro00005513.crossoversports.retrofit.extras.MatchR;
+import com.luisro00005513.crossoversports.retrofit.extras.PlayerR;
+import com.luisro00005513.crossoversports.retrofit.extras.PlayerXTeamR;
+import com.luisro00005513.crossoversports.retrofit.extras.TeamR;
+import com.luisro00005513.crossoversports.retrofit.extras.TeamXTournamentR;
+import com.luisro00005513.crossoversports.retrofit.extras.TournamentR;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -47,92 +40,92 @@ public class RetrofitServices{
     }//conectar
 
     //=================metodo para extraer todas las matches=============================
-    public List<Match> getMatches() {
+    public List<MatchR> getMatches() {
         RetrofitService retrofitService = conectar();
-        Call<List<Match>> call = retrofitService.getMatches();
-        List<Match> listMatches = null;
+        Call<List<MatchR>> call = retrofitService.getMatches();
+        List<MatchR> listMatchRS = null;
         try {
-            listMatches = call.execute().body();
+            listMatchRS = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return listMatches;
+        return listMatchRS;
     }//metodo para que devuelva las matches
 
 
 
     //=================metodo para extraer todos los players=============================
-    public List<Player> getPlayers(){
+    public List<PlayerR> getPlayers(){
         RetrofitService retrofitService = conectar();
-        Call<List<Player>> call = retrofitService.getPlayers();
-        List<Player> listPlayers = null;
+        Call<List<PlayerR>> call = retrofitService.getPlayers();
+        List<PlayerR> listPlayerRS = null;
         try {
-            listPlayers = call.execute().body();
+            listPlayerRS = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return listPlayers;
+        return listPlayerRS;
     }
 
 
 
 
     //=================metodo para extraer todos los torneos=============================
-    public List<Tournament> getTournaments()  {
+    public List<TournamentR> getTournaments()  {
         RetrofitService retrofitService = conectar();
-        Call<List<Tournament>> call = retrofitService.getTournaments();
-        List<Tournament> listTournaments = null;
+        Call<List<TournamentR>> call = retrofitService.getTournaments();
+        List<TournamentR> listTournamentRS = null;
         try {
-            listTournaments = call.execute().body();
+            listTournamentRS = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return listTournaments;
+        return listTournamentRS;
     }//metodo para que devuelva los torneos
 
 
 
     //=================metodo para extraer todos los equipos=============================
-    public List<Team> getTeams(){
+    public List<TeamR> getTeams(){
         RetrofitService retrofitService = conectar();
-        Call<List<Team>> call = retrofitService.getTeams();
-        List<Team> listTeams = null;
+        Call<List<TeamR>> call = retrofitService.getTeams();
+        List<TeamR> listTeamRS = null;
         try {
-            listTeams = call.execute().body();
+            listTeamRS = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return listTeams;
+        return listTeamRS;
     }//metodo para que devuelva los equipos
 
 
 
     //=================metodo para extraer todos los playersXteams=============================
-    public List<PlayerXTeam> getPlayersXTeams(){
+    public List<PlayerXTeamR> getPlayersXTeams(){
         RetrofitService retrofitService = conectar();
-        Call<List<PlayerXTeam>> call = retrofitService.getPlayerxteams();
-        List<PlayerXTeam> playerXTeamList = null;
+        Call<List<PlayerXTeamR>> call = retrofitService.getPlayerxteams();
+        List<PlayerXTeamR> playerXTeamRList = null;
         try {
-            playerXTeamList = call.execute().body();
+            playerXTeamRList = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return playerXTeamList;
+        return playerXTeamRList;
     }//metodo para que devuelva los playersxteams
 
 
 
     //=================metodo para extraer todos los teamxtournaments=============================
-    public List<TeamXTournament> getTeamxtournaments(){
+    public List<TeamXTournamentR> getTeamxtournaments(){
         RetrofitService retrofitService = conectar();
-        Call<List<TeamXTournament>> call = retrofitService.getTeamxtournaments();
-        List<TeamXTournament> teamXTournaments = null;
+        Call<List<TeamXTournamentR>> call = retrofitService.getTeamxtournaments();
+        List<TeamXTournamentR> teamXTournamentRS = null;
         try {
-            teamXTournaments = call.execute().body();
+            teamXTournamentRS = call.execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return teamXTournaments;
+        return teamXTournamentRS;
     }//metodo para que devuelva los teamxtournament
 
 
