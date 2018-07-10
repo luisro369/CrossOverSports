@@ -30,81 +30,68 @@
                 android:layout_gravity="center"/>
         </LinearLayout>
         <TextView
-            android:id="@+id/create_teamname_text"
+            android:paddingTop="8dp"
+            android:id="@+id/create_playername_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_teamname"
-            android:gravity="center"
-            android:paddingTop="8dp"/>
+            android:text="Team name"
+            android:gravity="center"/>
         <EditText
-            android:id="@+id/crete_teamname_edit"
+            android:id="@+id/team_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
-        <LinearLayout
+        <TextView
+            android:id="@+id/create_playerknown_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/create_player_country"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/create_player_city"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
+            android:text="Team country"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/team_country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Spinner
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"></Spinner>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-        </LinearLayout>
+            android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cretate_teamfoundation"
+            android:text="Team avatar"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/team_avatar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
             android:gravity="center"/>
         <TextView
-            android:id="@+id/crete_extrainfo_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_extra"
+            android:text="Team division"
             android:gravity="center"/>
         <EditText
-            android:id="@+id/crete_player_extrainfo"
+            android:id="@+id/team_division"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team city"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/team_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"/>
         <Button
-            android:id="@+id/create_playername_button"
+            android:id="@+id/btnCreateTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_team_button"
+            android:text="Add team"
             android:background="@color/secondaryDarkColor"
             android:padding="16dp"
-            android:textColor="@color/primaryTextColor"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:shadowColor="@color/primaryDarkColor"
+            android:textColor="@color/primaryTextColor"
+            android:textColorHighlight="@color/secondaryLightColor"/>
 
     </LinearLayout>
 

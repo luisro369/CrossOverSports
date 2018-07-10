@@ -6,9 +6,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Team {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="team_id")
-    private Integer teamId;
+    private Long teamId;
 
     @ColumnInfo(name="team_name")
     private String teamName;
@@ -25,20 +25,23 @@ public class Team {
     @ColumnInfo(name="team_city")
     private String teamCity;
 
-    public Team(Integer teamId, String teamName, String teamCountry, Integer teamAvatar, String teamDivision, String teamCity) {
-        this.teamId = teamId;
+    @ColumnInfo(name="team_createdby")
+    private String teamCreatedBy;
+
+    public Team(String teamName, String teamCountry, Integer teamAvatar, String teamDivision, String teamCity, String teamCreatedBy) {
         this.teamName = teamName;
         this.teamCountry = teamCountry;
         this.teamAvatar = teamAvatar;
         this.teamDivision = teamDivision;
         this.teamCity = teamCity;
+        this.teamCreatedBy=teamCreatedBy;
     }
 
-    public Integer getTeamId() {
+    public Long getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(Integer teamId) {
+    public void setTeamId(Long teamId) {
         this.teamId = teamId;
     }
 
@@ -80,5 +83,13 @@ public class Team {
 
     public void setTeamCity(String teamCity) {
         this.teamCity = teamCity;
+    }
+
+    public String getTeamCreatedBy() {
+        return teamCreatedBy;
+    }
+
+    public void setTeamCreatedBy(String teamCreatedBy) {
+        this.teamCreatedBy = teamCreatedBy;
     }
 }

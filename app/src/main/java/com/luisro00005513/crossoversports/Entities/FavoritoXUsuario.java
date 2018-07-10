@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+
+
 @Entity
 public class FavoritoXUsuario {
 
@@ -15,9 +17,9 @@ public class FavoritoXUsuario {
     private  String userName;
 
     @ColumnInfo(name = "player_id")
-    private Integer playerId;
+    private Long playerId;
 
-    public FavoritoXUsuario(String userName, Integer playerId) {
+    public FavoritoXUsuario(String userName, Long playerId) {
         this.userName = userName;
         this.playerId = playerId;
     }
@@ -38,11 +40,11 @@ public class FavoritoXUsuario {
         this.userName = userName;
     }
 
-    public Integer getPlayerId() {
+    public Long getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(Integer playerId) {
+    public void setPlayerId(Long playerId) {
         this.playerId = playerId;
     }
 }

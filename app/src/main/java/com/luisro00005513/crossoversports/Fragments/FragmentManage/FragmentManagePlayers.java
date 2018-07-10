@@ -50,7 +50,7 @@ public class FragmentManagePlayers extends Fragment {
       //  String byUser = FragmentoLogin.user;
         //List<PlayerR> playersList = MainActivity.db.favoritoXUsuarioDAO().favoriteByUser(byUser);
 
-        recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_players);
+        recyclerPlayer= (RecyclerView) viewPlayer.findViewById(R.id.recycler_manage_players);
         recyclerPlayer.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // FillPlayerList();

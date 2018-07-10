@@ -1,6 +1,7 @@
 package com.luisro00005513.crossoversports.Adapters;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.luisro00005513.crossoversports.Activities.MainActivity;
+import com.luisro00005513.crossoversports.Entities.FavoritoXUsuario;
 import com.luisro00005513.crossoversports.Entities.Player;
 import com.luisro00005513.crossoversports.Entities.PlayerXTeam;
 import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
@@ -24,6 +27,8 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
     ArrayList<Team> teamList;
     ArrayList<PlayerXTeam> pxtList;
     Integer team;
+    public static boolean flag=true;
+
 
 
     public JugadoresAdapter(List<Player> listaJugadores, ArrayList<Team> listaEquipos, ArrayList<PlayerXTeam> pxteamlist) {
@@ -41,11 +46,8 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderJugadores holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolderJugadores holder,final int position) {
        Long idPlayer;
-       Integer idPlayerList;
-        Integer teamList2;
-        int listSize;
        holder.playerAvatar.setImageResource(ListaJugadores.get(position).getPlayerAvatar());
        holder.playerName.setText(ListaJugadores.get(position).getPlayerName());
        holder.playerAlias.setText(ListaJugadores.get(position).getPlayerAlias());
@@ -56,6 +58,36 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
         //TeamR teamName = MainActivity.db.teamDAO().teamNameById(teamId);
        // String tname = teamName.getTeamName();
        // holder.playerTeam.setText(tname);
+        if(MainActivity.db.favoritoXUsuarioDAO().finById(idPlayer)!=null){
+            flag = true;
+            holder.playerFavorite.setImageResource(R.drawable.ic_favorite_true);
+        }else{
+            flag=false;
+        }
+        holder.playerFavorite.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if(flag) {
+                    Long playerId = ListaJugadores.get(position).getPlayerId();
+                    String playerName = ListaJugadores.get(position).getPlayerName();
+                    String userName = FragmentoLogin.user;
+                    MainActivity.db.favoritoXUsuarioDAO().deleteFavorite(playerId);
+                    Snackbar.make(view, playerName + " eliminado de favoritos", Snackbar.LENGTH_LONG).show();
+                    holder.playerFavorite.setImageResource(R.drawable.ic_star_border_black_24dp);
+                }
+                else{flag=true;
+
+                    Long playerId = ListaJugadores.get(position).getPlayerId();
+                    String playerName = ListaJugadores.get(position).getPlayerName();
+                    String userName = FragmentoLogin.user;
+                    MainActivity.db.favoritoXUsuarioDAO().inserFav(new FavoritoXUsuario(userName, playerId));
+                    Snackbar.make(view, playerName + " Añadido a favoritos", Snackbar.LENGTH_LONG).show();
+                    holder.playerFavorite.setImageResource(R.drawable.ic_star_border_black_24dp);
+
+                }
+            }
+        });
     }
 
     @Override
@@ -70,6 +102,7 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
         TextView playerAlias;
         TextView playerCountry;
         TextView playerTeam;
+        ImageView playerFavorite;
 
 
         public ViewHolderJugadores(View itemView) {
@@ -79,6 +112,8 @@ public class JugadoresAdapter extends RecyclerView.Adapter<JugadoresAdapter.View
             playerAlias=itemView.findViewById(R.id.player_knownas);
             playerCountry=itemView.findViewById(R.id.player_country);
             playerTeam=itemView.findViewById(R.id.player_team);
+            playerFavorite=itemView.findViewById(R.id.favplayer);
+
         }
     }
 }
