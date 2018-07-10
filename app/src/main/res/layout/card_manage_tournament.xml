@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp">
 
         <ImageView
-            android:id="@+id/manage_team_image"
+            android:id="@+id/manage_tournament_image"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1.5"

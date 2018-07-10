@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.luisro00005513.crossoversports.Adapters.ManageTeamAdapter;
 import com.luisro00005513.crossoversports.Entities.Team;
+import com.luisro00005513.crossoversports.Entities.Tournament;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
