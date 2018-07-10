@@ -24,6 +24,9 @@ public interface TournamentrDAO {
     @Query(("SELECT * FROM tournament WHERE tournament_createdby = :userName"))
     List<Tournament> tournamentByCreator(String userName);
 
+    @Query("delete from tournament where tournament_id = :favoriteId")
+    int deleteTournament(Long favoriteId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertTournament(Tournament... tournaments);
 

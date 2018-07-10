@@ -45,7 +45,7 @@ public class ManagePlayersAdapter extends RecyclerView.Adapter<ManagePlayersAdap
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolderJugadores holder, final int position) {
-       Long idPlayer;
+       final Long idPlayer;
        holder.playerAvatar.setImageResource(ListaJugadores.get(position).getPlayerAvatar());
        holder.playerName.setText(ListaJugadores.get(position).getPlayerName());
        holder.playerAlias.setText(ListaJugadores.get(position).getPlayerAlias());
@@ -89,8 +89,10 @@ public class ManagePlayersAdapter extends RecyclerView.Adapter<ManagePlayersAdap
         holder.playerDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Long playerId = ListaJugadores.get(position).getPlayerId();
                 String name = holder.playerName.getText().toString();
                 Snackbar.make(view,name+" Eliminado correctamente",Snackbar.LENGTH_LONG).show();
+                MainActivity.db.playerDAO().deletePLayer(playerId);
             }
         });
     }

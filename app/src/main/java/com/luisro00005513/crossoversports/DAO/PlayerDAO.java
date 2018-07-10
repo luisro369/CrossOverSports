@@ -14,6 +14,9 @@ public interface PlayerDAO {
     @Query("SELECT * FROM player")
     List<Player> getAll();
 
+    @Query("delete from player where player_id = :favoriteId")
+    int deletePLayer(Long favoriteId);
+
     @Query(("SELECT * FROM player WHERE player_name = :playerName"))
     Player playerByName(String playerName);
 

@@ -75,6 +75,15 @@ public class ManageTournamentAdapter extends RecyclerView.Adapter<ManageTourname
                 }
             }
         });
+        holder.manageTounamentDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Long TournamentId = tournamentManagerList.get(position).getTournamentId();
+                String name = holder.manageTournamentName.getText().toString();
+                Snackbar.make(view,name+" Eliminado correctamente",Snackbar.LENGTH_LONG).show();
+                MainActivity.db.tournamentrDAO().deleteTournament(TournamentId);
+            }
+        });
     }
 
     @Override
@@ -87,6 +96,8 @@ public class ManageTournamentAdapter extends RecyclerView.Adapter<ManageTourname
         TextView manageTournamentCountry;
         TextView manageTournamentName;
         ImageView manageTounamentFav;
+        ImageView manageTounamentDel;
+
 
 
         public ViewHolderManageTour(View itemView) {
@@ -96,6 +107,7 @@ public class ManageTournamentAdapter extends RecyclerView.Adapter<ManageTourname
             manageTournamentCountry =itemView.findViewById(R.id.manage_tournament_category);
             manageTournamentName=itemView.findViewById(R.id.manage_tournament_name);
             manageTounamentFav=itemView.findViewById(R.id.manage_tournament_favorite);
+            manageTounamentDel=itemView.findViewById(R.id.manage_tournament_delete);
 
         }
     }

@@ -20,6 +20,8 @@ public interface TeamDAO {
     @Query(("SELECT * FROM Team WHERE team_createdby = :userName"))
     List<Team> teamByCreator(String userName);
 
+    @Query("delete from team where team_id = :favoriteId")
+    int deleteTeam(Long favoriteId);
     @Insert
     void insertAll(Team... teams);
 }

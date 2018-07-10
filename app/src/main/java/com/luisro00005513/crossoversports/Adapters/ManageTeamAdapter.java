@@ -83,6 +83,15 @@ public class ManageTeamAdapter extends RecyclerView.Adapter<ManageTeamAdapter.Vi
                 }
             }
         });
+        holder.manageTeamDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Long teamId = manageTeamList.get(position).getTeamId();
+                String name = holder.manageTeamName.getText().toString();
+                Snackbar.make(view,name+" Eliminado correctamente",Snackbar.LENGTH_LONG).show();
+                MainActivity.db.teamDAO().deleteTeam(teamId);
+            }
+        });
     }
 
     @Override
