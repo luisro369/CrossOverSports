@@ -7,8 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.luisro00005513.crossoversports.R;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
-import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
+import com.luisro00005513.crossoversports.retrofit.extras.TournamentR;
 
 import java.util.List;
 
@@ -21,9 +20,9 @@ public class TournamentsAdapterViewHolder extends RecyclerView.ViewHolder {
     TextView tournamentName;
     TextView tournamentCountry;
     Context context;
-    List<Tournament> tournamentsList;
+    List<TournamentR> tournamentsList;
 
-    public TournamentsAdapterViewHolder(View itemView, List<Tournament> tournamentsList, Context context) {
+    public TournamentsAdapterViewHolder(View itemView, List<TournamentR> tournamentsList, Context context) {
         super(itemView);
         this.tournamentsList =  tournamentsList;
         this.context = context;

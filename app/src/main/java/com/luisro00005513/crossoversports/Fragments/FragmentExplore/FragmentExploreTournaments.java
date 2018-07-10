@@ -11,12 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.PlayersAdapter;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.TournamentsAdapter;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
-import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
+import com.luisro00005513.crossoversports.retrofit.extras.TournamentR;
 
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class FragmentExploreTournaments extends Fragment {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
-    public static List<Tournament> listTournaments;
+    public static List<TournamentR> listTournamentRS;
 
 
     public FragmentExploreTournaments() {
@@ -54,7 +52,7 @@ public class FragmentExploreTournaments extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if(listTournaments != null) {
+        if(listTournamentRS != null) {
             CreandoCardViews();
         }
     }
@@ -65,17 +63,17 @@ public class FragmentExploreTournaments extends Fragment {
         Thread thread = new Thread(){
             public void run(){
                 RetrofitServices player = new RetrofitServices();
-                listTournaments = player.getTournaments();
+                listTournamentRS = player.getTournaments();
             }//run in backgorund
         };thread.start();
 
-        if(listTournaments == null) {
+        if(listTournamentRS == null) {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     //----------------llamada a views y llenarlos con lista(tienen que estar en un if)----
                     //-----aca se setean todas las views a lo que uno quiera
-                    if (listTournaments != null) {
+                    if (listTournamentRS != null) {
                         CreandoCardViews();
                     }
                     //------------------------------------------------
@@ -99,7 +97,7 @@ public class FragmentExploreTournaments extends Fragment {
         //=========codigo para CardView de players=============
         recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_explore_tournament);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        TournamentsAdapter tournamentsAdapter = new TournamentsAdapter(getContext(),listTournaments);//modifique esto
+        TournamentsAdapter tournamentsAdapter = new TournamentsAdapter(getContext(), listTournamentRS);//modifique esto
         recyclerView.setAdapter(tournamentsAdapter);
         //=========codigo para CardView de players(fin)========
     }

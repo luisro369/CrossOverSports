@@ -14,11 +14,9 @@ import android.view.ViewGroup;
 import com.luisro00005513.crossoversports.Fragments.FragmentExplore.adapter.PlayersAdapter;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
+import com.luisro00005513.crossoversports.retrofit.extras.PlayerR;
 
 import java.util.List;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +25,7 @@ public class FragmentExplorePlayers extends Fragment {
 
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
-    public static List<Player> listPlayers;
+    public static List<PlayerR> listPlayerRS;
 
 
     public FragmentExplorePlayers() {
@@ -44,7 +42,6 @@ public class FragmentExplorePlayers extends Fragment {
         swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipe_player_explore);
 
 
-
         InitialView();
 
         return view;
@@ -53,7 +50,7 @@ public class FragmentExplorePlayers extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if(listPlayers != null) {
+        if(listPlayerRS != null) {
             CreandoCardViews();
         }
     }
@@ -64,17 +61,17 @@ public class FragmentExplorePlayers extends Fragment {
         Thread thread = new Thread(){
             public void run(){
                 RetrofitServices player = new RetrofitServices();
-                listPlayers = player.getPlayers();
+                listPlayerRS = player.getPlayers();
             }//run in backgorund
         };thread.start();
 
-        if(listPlayers == null) {
+        if(listPlayerRS == null) {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     //----------------llamada a views y llenarlos con lista(tienen que estar en un if)----
                     //-----aca se setean todas las views a lo que uno quiera
-                    if (listPlayers != null) {
+                    if (listPlayerRS != null) {
                         CreandoCardViews();
                     }
                     //------------------------------------------------
@@ -98,7 +95,7 @@ public class FragmentExplorePlayers extends Fragment {
         //=========codigo para CardView de players=============
         recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_explore_players);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        PlayersAdapter playersAdapter = new PlayersAdapter(getContext(),listPlayers);//modifique esto
+        PlayersAdapter playersAdapter = new PlayersAdapter(getContext(), listPlayerRS);//modifique esto
         recyclerView.setAdapter(playersAdapter);
         //=========codigo para CardView de players(fin)========
     }

@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements
          db = Room.databaseBuilder(getApplicationContext(), XoverDatabase.class, "xover")
                 .allowMainThreadQueries()
                 .build();
-         /*db.playerDAO().insertPlayer(new Player(R.drawable.navas,"Cristiano","Ronaldo",
+         /*db.playerDAO().insertPlayer(new PlayerR(R.drawable.navas,"Cristiano","Ronaldo",
                  "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
 
         //CREACION DE USUARIOS

@@ -8,8 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.luisro00005513.crossoversports.R;
-import com.luisro00005513.crossoversports.retrofit.extras.Player;
-import com.luisro00005513.crossoversports.retrofit.extras.Team;
+import com.luisro00005513.crossoversports.retrofit.extras.TeamR;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,10 +18,10 @@ import java.util.List;
  */
 
 public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapterViewHolder> {
-    List<Team> teamsList;
+    List<TeamR> teamsList;
     private Context context;
 
-    public TeamsAdapter(Context context, List<Team> teamsList){
+    public TeamsAdapter(Context context, List<TeamR> teamsList){
         this.teamsList = teamsList;
         this.context = context;
 

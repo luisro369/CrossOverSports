@@ -3,7 +3,7 @@ package com.luisro00005513.crossoversports.retrofit.extras;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class TeamXTournament {
+public class TeamXTournamentR {
 
     @SerializedName("_id")
     @Expose
@@ -25,7 +25,7 @@ public class TeamXTournament {
     private Integer v;
 
     //contructor
-    public TeamXTournament(String txtId, String teamId, String tournamentId, String points) {
+    public TeamXTournamentR(String txtId, String teamId, String tournamentId, String points) {
         this.txtId = txtId;
         this.teamId = teamId;
         this.tournamentId = tournamentId;
