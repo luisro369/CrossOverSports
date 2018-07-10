@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#fff"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/manage_team_image"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1.5"
+            android:src="@drawable/shield"
+
+            android:background="#000"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/manage_team_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Category"
+                android:layout_margin="4sp"
+                android:textSize="10sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/manage_team_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/manage_team_category"
+                android:text="Team's Name"
+                android:layout_margin="4sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:background="@color/secondaryDarkColor"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/manage_team_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:layout_below="@id/manage_team_name"
+                android:textSize="10sp"
+                android:layout_marginTop="4sp"
+                android:layout_marginBottom="4sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8sp"
+                android:textColor="#000"/>
+            <TextView
+                android:id="@+id/manage_team_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:textSize="10sp"
+                android:layout_below="@id/manage_team_name"
+                android:layout_marginTop="4sp"
+                android:layout_marginBottom="4sp"
+                android:layout_marginRight="8sp"
+                android:textColor="#000"
+                android:layout_alignLeft="@id/player_country"/>
+
+            <TextView
+                android:id="@+id/manage_team_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/manage_team_txt1"
+                android:layout_marginLeft="16dp"
+                android:text="-"
+                android:textColor="#000"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/manage_team_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/manage_team_txt2"
+                android:layout_toRightOf="@id/player_team"
+                android:text="-"
+                android:textSize="12sp"
+                android:layout_marginLeft="26dp"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_star_border_black_24dp"
+                android:background="@color/blanco"
+                android:layout_marginBottom="4dp"/>
+            <ImageView
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
