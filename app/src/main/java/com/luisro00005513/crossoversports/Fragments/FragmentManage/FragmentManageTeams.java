@@ -47,7 +47,7 @@ public class FragmentManageTeams extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_manage_teams, container, false);
 
-        manageTeamList = new ArrayList<>();
+        List<Team> manageTeamList = MainActivity.db.teamDAO().getAll();
         recyclerManageTeam = (RecyclerView) viewGroup.findViewById(R.id.manage_team_recycler);
         recyclerManageTeam.setLayoutManager(new LinearLayoutManager(getContext()));
 

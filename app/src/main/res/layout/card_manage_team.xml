@@ -109,6 +109,7 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
+                android:id="@+id/manage_team_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -116,6 +117,7 @@
                 android:background="@color/blanco"
                 android:layout_marginBottom="4dp"/>
             <ImageView
+                android:id="@+id/manage_team_delete"
                 android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

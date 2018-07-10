@@ -14,11 +14,14 @@ public class TournamentFavoritoXUsuario {
     private  String userName;
 
     @ColumnInfo(name = "Tournament_id")
-    private Integer TournamentId;
+    private Long TournamentId;
 
-    public TournamentFavoritoXUsuario(String userName, Integer TournamentId) {
+    public TournamentFavoritoXUsuario(String userName, Long tournamentId) {
         this.userName = userName;
-        TournamentId = TournamentId;
+        TournamentId = tournamentId;
+    }
+
+    public TournamentFavoritoXUsuario() {
     }
 
     public Long getTournamentFxuId() {
@@ -26,7 +29,7 @@ public class TournamentFavoritoXUsuario {
     }
 
     public void setTournamentFxuId(Long tournamentFxuId) {
-        this.TournamentFxuId = tournamentFxuId;
+        TournamentFxuId = tournamentFxuId;
     }
 
     public String getUserName() {
@@ -37,11 +40,11 @@ public class TournamentFavoritoXUsuario {
         this.userName = userName;
     }
 
-    public Integer getTournamentId() {
+    public Long getTournamentId() {
         return TournamentId;
     }
 
-    public void setTeamId(Integer TournamentId) {
-        TournamentId = TournamentId;
+    public void setTournamentId(Long tournamentId) {
+        TournamentId = tournamentId;
     }
 }

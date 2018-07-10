@@ -36,7 +36,7 @@ public class FragmentCreateTeams extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_create_teams, container, false);
-        inflater.inflate(R.layout.fragment_create_players, container, false);
+       // inflater.inflate(R.layout.fragment_create_players, container, false);
 
         addTeam =(Button) view.findViewById(R.id.btnCreateTeam);
         teamName =(EditText) view.findViewById(R.id.team_name);

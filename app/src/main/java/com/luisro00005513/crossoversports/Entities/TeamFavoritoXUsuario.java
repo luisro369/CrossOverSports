@@ -6,6 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class TeamFavoritoXUsuario {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "team_fxu_id")
     private Long TeamFxuId;
@@ -14,9 +15,13 @@ public class TeamFavoritoXUsuario {
     private  String userName;
 
     @ColumnInfo(name = "team_id")
-    private Integer TeamId;
+    private Long TeamId;
 
-    public TeamFavoritoXUsuario(String userName, Integer teamId) {
+
+    public TeamFavoritoXUsuario() {
+    }
+
+    public TeamFavoritoXUsuario(String userName, Long teamId) {
         this.userName = userName;
         TeamId = teamId;
     }
@@ -26,7 +31,7 @@ public class TeamFavoritoXUsuario {
     }
 
     public void setTeamFxuId(Long teamFxuId) {
-        this.TeamFxuId = teamFxuId;
+        TeamFxuId = teamFxuId;
     }
 
     public String getUserName() {
@@ -37,11 +42,11 @@ public class TeamFavoritoXUsuario {
         this.userName = userName;
     }
 
-    public Integer getTeamId() {
+    public Long getTeamId() {
         return TeamId;
     }
 
-    public void setTeamId(Integer teamId) {
+    public void setTeamId(Long teamId) {
         TeamId = teamId;
     }
 }

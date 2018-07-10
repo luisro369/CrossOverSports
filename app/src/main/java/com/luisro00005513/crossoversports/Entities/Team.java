@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Team {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="team_id")
     private Long teamId;
 
@@ -34,7 +34,7 @@ public class Team {
         this.teamAvatar = teamAvatar;
         this.teamDivision = teamDivision;
         this.teamCity = teamCity;
-        this.setTeamCreatedBy(teamCreatedBy);
+        this.teamCreatedBy=teamCreatedBy;
     }
 
     public Long getTeamId() {

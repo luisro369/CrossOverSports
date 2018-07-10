@@ -18,6 +18,7 @@
         android:text="Tournament Name"
         android:gravity="center"/>
     <EditText
+        android:id="@+id/create_tournament_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:text="Tournament Country"/>
     <EditText
+        android:id="@+id/create_tournament_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
@@ -35,9 +37,11 @@
         android:layout_height="wrap_content"
         android:text="Image Link"/>
     <EditText
+        android:id="@+id/create_tournament_ImageLink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/create_tournament"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD TOURNAMENT"

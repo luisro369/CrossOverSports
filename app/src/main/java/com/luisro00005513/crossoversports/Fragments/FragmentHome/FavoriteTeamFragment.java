@@ -38,7 +38,9 @@ public class FavoriteTeamFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_favorite_team, container, false);
 
-        List<Team> teamList = MainActivity.db.teamDAO().getAll();
+//BUSQUEDA POR FAVORITO
+        String byUser = FragmentoLogin.user;
+        List<Team> teamList = MainActivity.db.teamFavoritoXUsuarioDAO().favoriteTeamByUser(byUser);
         recyclerTeam = (RecyclerView) viewGroup.findViewById(R.id.team_recycler);
         recyclerTeam.setLayoutManager(new LinearLayoutManager(getContext()));
 

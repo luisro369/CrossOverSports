@@ -9,12 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.luisro00005513.crossoversports.Activities.MainActivity;
 import com.luisro00005513.crossoversports.Adapters.ManageTeamAdapter;
 import com.luisro00005513.crossoversports.Adapters.ManageTournamentAdapter;
 import com.luisro00005513.crossoversports.Entities.Tournament;
+import com.luisro00005513.crossoversports.Fragments.FragmentHome.FragmentoLogin;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +25,6 @@ import java.util.ArrayList;
 public class FragmentManageTournament extends Fragment {
 
     RecyclerView recyclerManageTournament;
-    ArrayList manageTournamentList;
 
 
     public FragmentManageTournament() {
@@ -36,24 +38,16 @@ public class FragmentManageTournament extends Fragment {
         // Inflate the layout for this fragment
 
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_manage_tournament, container, false);
-
-        manageTournamentList = new ArrayList<>();
+        String byUser = FragmentoLogin.user;
+        List<Tournament> manageTournamentList = MainActivity.db.tournamentrDAO().tournamentByCreator(byUser);
         recyclerManageTournament=(RecyclerView) viewGroup.findViewById(R.id.manage_tournament_recycler);
         recyclerManageTournament.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FillListManagerTournament();
 
         ManageTournamentAdapter adapter = new ManageTournamentAdapter(manageTournamentList);
         recyclerManageTournament.setAdapter(adapter);
 
         return viewGroup;
-    }
-
-    private void FillListManagerTournament() {
-        manageTournamentList.add(new Tournament(1, "La Liga", "Spain", R.drawable.la_liga));
-        manageTournamentList.add(new Tournament(2, "Premier League", "England", R.drawable.premier));
-        manageTournamentList.add(new Tournament(3, "Bundesliga", "Germany", R.drawable.bundesliga));
-
     }
 
 }
