@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class TeamFavoritoXUsuario {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "team_fxu_id")
-    private Long fxuId;
+    private Long TeamFxuId;
 
     @ColumnInfo(name = "user_name")
     private  String userName;
@@ -21,12 +21,12 @@ public class TeamFavoritoXUsuario {
         TeamId = teamId;
     }
 
-    public Long getFxuId() {
-        return fxuId;
+    public Long getTeamFxuId() {
+        return TeamFxuId;
     }
 
-    public void setFxuId(Long fxuId) {
-        this.fxuId = fxuId;
+    public void setTeamFxuId(Long teamFxuId) {
+        this.TeamFxuId = teamFxuId;
     }
 
     public String getUserName() {
