@@ -11,11 +11,12 @@ import com.luisro00005513.crossoversports.Entities.Team;
 import com.luisro00005513.crossoversports.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam> {
-    ArrayList<Team> ListTeam;
+    List<Team> ListTeam;
 
-    public TeamAdapter(ArrayList<Team> ListTeam) {
+    public TeamAdapter(List<Team> ListTeam) {
         this.ListTeam = ListTeam;
     }
 

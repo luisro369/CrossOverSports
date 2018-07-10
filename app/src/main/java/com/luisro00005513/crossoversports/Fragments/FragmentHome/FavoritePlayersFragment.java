@@ -24,7 +24,6 @@ import com.luisro00005513.crossoversports.Entities.*;
 import com.luisro00005513.crossoversports.R;
 import com.luisro00005513.crossoversports.retrofit.RetrofitServices;
 import com.luisro00005513.crossoversports.retrofit.extras.Tournament;
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;

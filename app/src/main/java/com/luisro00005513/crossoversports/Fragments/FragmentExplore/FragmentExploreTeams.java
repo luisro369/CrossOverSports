@@ -37,19 +37,11 @@ public class FragmentExploreTeams extends Fragment {
         recyclerExploreTeam = (RecyclerView) viewExploreTeam.findViewById(R.id.recycler_explore_team);
         recyclerExploreTeam.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FillTeamExploreList();
 
         TeamExploreAdapter adapter = new TeamExploreAdapter(teamExploreList);
         recyclerExploreTeam.setAdapter(adapter);
 
         return viewExploreTeam;
-    }
-
-    private void FillTeamExploreList() {
-        teamExploreList.add(new Team(1, "Real Madrid C.F.", "Spain", R.drawable.real_madrid,
-                "La Liga", "Madrid"));
-        teamExploreList.add(new Team(2,"F.C. Barcelona", "Spain", R.drawable.barcelona,"" +
-                "La Liga", "Barcelona"));
     }
 
 }

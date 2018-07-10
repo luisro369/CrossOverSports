@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements
                  "10/10/10","info extra","Costa Rica"));*/ //AÑADIENDO JUGADORES
 
         //CREACION DE USUARIOS
-     /*   db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
+       /*db.userDAO().insertUser(new User("sama","12345","sama.cesar"));
         db.userDAO().insertUser(new User("ricardo","12345","ricardoarroba"));
         db.userDAO().insertUser(new User("luis","12345","luisarroba"));*/
 
