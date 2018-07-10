@@ -53,7 +53,7 @@ public class FragmentCreateTeams extends Fragment {
                 String division = teamDivision.getText().toString();
                 String city = teamCity.getText().toString();
                 String createdBy= FragmentoLogin.user;
-                MainActivity.db.teamDAO().insertAll(new Team(name,country,R.drawable.barcelona,division,city,createdBy));
+                MainActivity.db.teamDAO().insertAll(new Team(name,country,R.drawable.ic_team_default,division,city,createdBy));
                 Snackbar.make(view, "Equipo "+name+" creado exitosamente" , Snackbar.LENGTH_SHORT)
                         .show();
             }

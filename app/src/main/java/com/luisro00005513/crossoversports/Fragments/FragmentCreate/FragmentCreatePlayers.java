@@ -53,7 +53,7 @@ public class FragmentCreatePlayers extends Fragment {
                 String extra = playerExtra.getText().toString();
                 String country = playerCountry.getText().toString();
                 String createdBy= FragmentoLogin.user;
-                MainActivity.db.playerDAO().insertPlayer(new Player(R.drawable.navas,name,alias,
+                MainActivity.db.playerDAO().insertPlayer(new Player(R.drawable.ic_player_avatar,name,alias,
                         birth,extra,country,createdBy));
                 Snackbar.make(view, "Jugador "+name+" creado exitosamente" , Snackbar.LENGTH_SHORT)
                         .show();
